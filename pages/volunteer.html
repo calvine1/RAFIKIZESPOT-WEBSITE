@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Volunteer with Rafiki Zespół. Use your gifts, skills, time and resources to serve through music, worship, media and community outreach.">
+
+    <title>Volunteer With Us | Rafiki Zespół</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .volunteer-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 90px;
+            color: #fff;
+            background:
+                radial-gradient(circle at 85% 15%, rgba(41,171,226,.23), transparent 35%),
+                linear-gradient(135deg, #111722, #17283b 60%, #101820);
+        }
+
+        .volunteer-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .volunteer-eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #29abe2;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .volunteer-hero h1 {
+            margin: 0 0 22px;
+            color: #fff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2.7rem, 6vw, 4.8rem);
+            line-height: 1.08;
+        }
+
+        .volunteer-hero h1 span {
+            color: #29abe2;
+        }
+
+        .volunteer-hero p {
+            max-width: 650px;
+            margin: 0 0 30px;
+            color: #d5deea;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .volunteer-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 13px 24px;
+            border: 2px solid #29abe2;
+            border-radius: 8px;
+            background: #29abe2;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: .25s ease;
+        }
+
+        .volunteer-button:hover {
+            transform: translateY(-2px);
+            border-color: #168fc4;
+            background: #168fc4;
+            color: #fff;
+        }
+
+        .volunteer-button-outline {
+            background: transparent;
+            color: #1a1a1a;
+        }
+
+        .volunteer-button-outline:hover {
+            color: #fff;
+        }
+
+        .volunteer-intro {
+            padding: 80px 0 35px;
+            background: #f7faff;
+        }
+
+        .volunteer-section-heading {
+            max-width: 740px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .volunteer-section-heading > span {
+            display: block;
+            margin-bottom: 12px;
+            color: #168fc4;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .volunteer-section-heading h2 {
+            margin: 0 0 16px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .volunteer-section-heading p {
+            margin: 0;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .volunteer-opportunities {
+            padding: 25px 0 85px;
+            background: #f7faff;
+        }
+
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .volunteer-card {
+            padding: 30px;
+            border: 1px solid #e5e5eb;
+            border-radius: 18px;
+            background: #fff;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .volunteer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 35px rgba(17,23,34,.07);
+        }
+
+        .volunteer-card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            background: #eaf7fd;
+            color: #168fc4;
+            font-size: 1.5rem;
+        }
+
+        .volunteer-card h3 {
+            margin: 0 0 12px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .volunteer-card p {
+            margin: 0;
+            color: #666;
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        .volunteer-note {
+            padding: 75px 0;
+            background: #fff;
+        }
+
+        .volunteer-note-inner {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .volunteer-note h2 {
+            margin: 0 0 18px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+        }
+
+        .volunteer-note p {
+            color: #666;
+            line-height: 1.9;
+        }
+
+        .volunteer-note-panel {
+            padding: 32px;
+            border-radius: 18px;
+            background: #eaf7fd;
+        }
+
+        .volunteer-note-panel h3 {
+            margin: 0 0 12px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .volunteer-note-panel p {
+            margin-bottom: 22px;
+        }
+
+        .volunteer-contact {
+            padding: 85px 0;
+            background: #111722;
+            color: #fff;
+            text-align: center;
+        }
+
+        .volunteer-contact h2 {
+            margin: 0 0 16px;
+            color: #fff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .volunteer-contact > .container > p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #c8d2df;
+            line-height: 1.8;
+        }
+
+        .volunteer-contact-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .volunteer-contact .volunteer-button-outline {
+            border-color: rgba(255,255,255,.6);
+            color: #fff;
+        }
+
+        .volunteer-contact .volunteer-button-outline:hover {
+            border-color: #29abe2;
+            background: #29abe2;
+        }
+
+        @media (max-width: 900px) {
+            .volunteer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .volunteer-note-inner {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .volunteer-hero {
+                padding: 75px 0 65px;
+            }
+
+            .volunteer-intro {
+                padding-top: 60px;
+            }
+
+            .volunteer-opportunities {
+                padding-bottom: 60px;
+            }
+
+            .volunteer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .volunteer-card {
+                padding: 25px;
+            }
+
+            .volunteer-note,
+            .volunteer-contact {
+                padding: 60px 0;
+            }
+
+            .volunteer-contact-actions {
+                flex-direction: column;
+            }
+
+            .volunteer-contact-actions .volunteer-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED HEADER: KEEP THIS STRUCTURE CONSISTENT ON EVERY PAGE -->
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+                <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="main-menu">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="volunteer-hero">
+            <div class="container">
+                <div class="volunteer-hero-content">
+
+                    <span class="volunteer-eyebrow">Serve With Purpose</span>
+
+                    <h1>Your gifts can make a <span>difference.</span></h1>
+
+                    <p>
+                        Rafiki Zespół is more than music. We are a community
+                        committed to serving God's purpose through worship,
+                        creativity and outreach. Bring your skills, your time
+                        and your heart, and help us make an impact.
+                    </p>
+
+                    <a class="volunteer-button"
+                       href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3%C5%82%2C%20I%20would%20like%20to%20volunteer%20and%20serve%20with%20your%20team."
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Become a Volunteer ↗
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+
+        <section class="volunteer-intro">
+            <div class="container">
+
+                <div class="volunteer-section-heading">
+                    <span>Find Your Place</span>
+
+                    <h2>There is a place for you.</h2>
+
+                    <p>
+                        You do not have to be on stage to make a difference.
+                        Whether your strength is creativity, organisation,
+                        technology or practical service, your contribution
+                        can help move the vision forward.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VOLUNTEER OPPORTUNITIES -->
+
+        <section class="volunteer-opportunities">
+            <div class="container">
+
+                <div class="volunteer-grid">
+
+                    <article class="volunteer-card">
+                        <div class="volunteer-card-icon" aria-hidden="true">♫</div>
+                        <h3>Music &amp; Worship</h3>
+                        <p>
+                            Contribute your musical ability, vocals,
+                            instrumental skills or worship experience
+                            to our ministry and events.
+                        </p>
+                    </article>
+
+                    <article class="volunteer-card">
+                        <div class="volunteer-card-icon" aria-hidden="true">▣</div>
+                        <h3>Media &amp; Photography</h3>
+                        <p>
+                            Help capture moments, create content, manage
+                            social media and share the Rafiki story
+                            through digital platforms.
+                        </p>
+                    </article>
+
+                    <article class="volunteer-card">
+                        <div class="volunteer-card-icon" aria-hidden="true">✦</div>
+                        <h3>Creative &amp; Design</h3>
+                        <p>
+                            Use graphic design, video editing, writing
+                            and creative communication to give our
+                            message a strong visual identity.
+                        </p>
+                    </article>
+
+                    <article class="volunteer-card">
+                        <div class="volunteer-card-icon" aria-hidden="true">⚙</div>
+                        <h3>Technical Support</h3>
+                        <p>
+                            Support sound, lighting, equipment, live
+                            production and other technical needs during
+                            rehearsals, services and events.
+                        </p>
+                    </article>
+
+                    <article class="volunteer-card">
+                        <div class="volunteer-card-icon" aria-hidden="true">◎</div>
+                        <h3>Events &amp; Administration</h3>
+                        <p>
+                            Help coordinate programmes, organise logistics,
+                            welcome guests, manage communication and
+                            support the team behind the scenes.
+                        </p>
+                    </article>
+
+                    <article class="volunteer-card">
+                        <div class="volunteer-card-icon" aria-hidden="true">♡</div>
+                        <h3>Outreach &amp; Practical Help</h3>
+                        <p>
+                            Take part in community initiatives, youth
+                            empowerment, charity activities and practical
+                            service to people who need support.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MORE WAYS TO SERVE -->
+
+        <section class="volunteer-note">
+            <div class="container">
+
+                <div class="volunteer-note-inner">
+
+                    <div>
+                        <span class="volunteer-eyebrow">Every Contribution Matters</span>
+
+                        <h2>Serve with what you have.</h2>
+
+                        <p>
+                            We believe that service is not limited to one
+                            particular skill or role. You can contribute
+                            your time, professional expertise, equipment,
+                            resources or financial support according to
+                            your ability and willingness.
+                        </p>
+
+                        <p>
+                            If you have a skill that is not listed above,
+                            we would still love to hear from you. Let us
+                            explore how your contribution can support
+                            the mission of Rafiki Zespół.
+                        </p>
+                    </div>
+
+                    <div class="volunteer-note-panel">
+                        <h3>Ready to get involved?</h3>
+
+                        <p>
+                            Tell us a little about yourself, the skills
+                            you would like to offer and how you hope
+                            to serve. Our team will connect with you
+                            to discuss the next steps.
+                        </p>
+
+                        <a class="volunteer-button"
+                           href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3%C5%82%2C%20I%20would%20like%20to%20discuss%20volunteering%20with%20your%20team."
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Talk to Our Team ↗
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT CTA -->
+
+        <section class="volunteer-contact">
+            <div class="container">
+
+                <span class="volunteer-eyebrow">Let's Serve Together</span>
+
+                <h2>Be part of the story.</h2>
+
+                <p>
+                    A willing heart, a shared purpose and a helping hand
+                    can go a long way. Join us as we serve our generation
+                    through music, worship and meaningful action.
+                </p>
+
+                <div class="volunteer-contact-actions">
+
+                    <a class="volunteer-button"
+                       href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3%C5%82%2C%20I%20am%20interested%20in%20volunteering."
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        WhatsApp Us
+                    </a>
+
+                    <a class="volunteer-button volunteer-button-outline"
+                       href="mailto:rafikizespol24@gmail.com?subject=Volunteering%20with%20Rafiki%20Zesp%C3%B3%C5%82">
+                        Email Our Team
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SHARED FOOTER -->
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a class="brand" href="../index.html">
+                        <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                        <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                    </a>
+
+                    <p>
+                        Where Music Meets Purpose. Serving God's purpose
+                        in our generation through music and worship.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Discover</h4>
+                    <a href="about.html">About Rafiki</a>
+                    <a href="vision.html">Our Vision</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="journey.html">Our Journey</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Ministry</h4>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="community.html">Community</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <a href="invite.html">Invite Rafiki</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="partner.html">Partner With Us</a>
+                    <a href="support.html">Support the Vision</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>© <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>

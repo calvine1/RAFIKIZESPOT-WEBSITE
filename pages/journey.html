@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111722">
+    <meta name="description" content="Discover the story, faith, music and purpose behind Rafiki Zespół. Where Music Meets Purpose.">
+    <title>Our Journey | Rafiki Zespół</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* JOURNEY PAGE — all styles are scoped to this page */
+        .journey-page {
+            --j-blue: #29abe2;
+            --j-gold: #f7c32e;
+            --j-coral: #e8735a;
+            --j-dark: #111722;
+            --j-ink: #202938;
+            --j-muted: #6c7788;
+            --j-light: #f5f8fc;
+            color: var(--j-ink);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .journey-page h1,
+        .journey-page h2,
+        .journey-page h3,
+        .journey-page .brand-name {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .journey-page img {
+            max-width: 100%;
+        }
+
+        .journey-page .j-container {
+            width: min(1120px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .journey-page .j-eyebrow {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--j-blue);
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .19em;
+            text-transform: uppercase;
+        }
+
+        .journey-page .j-heading {
+            max-width: 760px;
+            margin: 0 auto 20px;
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            line-height: 1.12;
+            letter-spacing: -.045em;
+        }
+
+        .journey-page .j-heading span {
+            color: var(--j-blue);
+        }
+
+        .journey-page .j-intro {
+            max-width: 720px;
+            margin: 0 auto;
+            color: var(--j-muted);
+            font-size: 1.04rem;
+            line-height: 1.9;
+        }
+
+        .journey-page .j-center {
+            text-align: center;
+        }
+
+        .journey-page .j-section {
+            position: relative;
+            padding: 100px 0;
+        }
+
+        /* HERO */
+        .journey-page .j-hero {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            min-height: min(780px, 90svh);
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 100px 20px 90px;
+            color: #fff;
+            background:
+                radial-gradient(ellipse at 50% 35%, rgba(41,171,226,.25), transparent 48%),
+                linear-gradient(140deg, #172536 0%, #10151f 55%, #17283a 100%);
+        }
+
+        .journey-page .j-hero-photo {
+            position: absolute;
+            z-index: -3;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .42;
+            animation: jHeroReveal 1.5s ease both;
+        }
+
+        .journey-page .j-hero::before {
+            position: absolute;
+            z-index: -2;
+            inset: 0;
+            content: "";
+            background:
+                linear-gradient(180deg, rgba(9,14,23,.30), rgba(9,14,23,.70)),
+                linear-gradient(90deg, rgba(9,14,23,.48), transparent 70%);
+        }
+
+        .journey-page .j-hero-glow {
+            position: absolute;
+            z-index: -1;
+            top: 15%;
+            left: 50%;
+            width: min(75vw, 800px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: rgba(41,171,226,.10);
+            filter: blur(90px);
+            transform: translateX(-50%);
+            animation: jGlow 7s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        .journey-page .j-hero-content {
+            width: min(900px, 100%);
+            text-align: center;
+            animation: jContentRise 1.1s ease both;
+        }
+
+        .journey-page .j-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            color: #ccefff;
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .23em;
+            text-transform: uppercase;
+        }
+
+        .journey-page .j-kicker::before,
+        .journey-page .j-kicker::after {
+            width: 27px;
+            height: 1px;
+            content: "";
+            background: var(--j-gold);
+        }
+
+        .journey-page .j-hero h1 {
+            margin: 0;
+            font-size: clamp(3rem, 8.5vw, 7rem);
+            font-weight: 700;
+            line-height: .98;
+            letter-spacing: -.075em;
+        }
+
+        .journey-page .j-hero h1 span {
+            display: block;
+            margin-top: 12px;
+            color: var(--j-blue);
+        }
+
+        .journey-page .j-hero-motto {
+            margin: 30px 0 0;
+            color: #fff;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            letter-spacing: .06em;
+        }
+
+        .journey-page .j-hero-copy {
+            max-width: 630px;
+            margin: 20px auto 0;
+            color: rgba(255,255,255,.76);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .journey-page .j-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 13px;
+            margin-top: 34px;
+        }
+
+        .journey-page .j-button {
+            display: inline-flex;
+            min-height: 49px;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 23px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            font-size: .9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .25s ease, background .25s ease, border-color .25s ease;
+        }
+
+        .journey-page .j-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .journey-page .j-button-primary {
+            color: #101722;
+            background: var(--j-gold);
+        }
+
+        .journey-page .j-button-primary:hover {
+            background: #ffda68;
+        }
+
+        .journey-page .j-button-outline {
+            border-color: rgba(255,255,255,.48);
+            color: #fff;
+            background: rgba(255,255,255,.06);
+        }
+
+        .journey-page .j-button-outline:hover {
+            border-color: var(--j-blue);
+            background: rgba(41,171,226,.14);
+        }
+
+        /* Falling droplets and ripples */
+        .journey-page .j-water {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .journey-page .j-drop {
+            position: absolute;
+            top: -35px;
+            width: 3px;
+            height: 11px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, transparent, #d5f5ff, rgba(41,171,226,.35));
+            box-shadow: 0 0 9px rgba(133,221,255,.55);
+            animation: jFall linear infinite;
+        }
+
+        .journey-page .j-drop:nth-child(1) { left: 8%; animation-duration: 6s; animation-delay: -2s; }
+        .journey-page .j-drop:nth-child(2) { left: 17%; animation-duration: 8s; animation-delay: -5s; }
+        .journey-page .j-drop:nth-child(3) { left: 29%; animation-duration: 5s; animation-delay: -1s; }
+        .journey-page .j-drop:nth-child(4) { left: 41%; animation-duration: 7s; animation-delay: -4s; }
+        .journey-page .j-drop:nth-child(5) { left: 54%; animation-duration: 6s; animation-delay: -3s; }
+        .journey-page .j-drop:nth-child(6) { left: 66%; animation-duration: 9s; animation-delay: -6s; }
+        .journey-page .j-drop:nth-child(7) { left: 77%; animation-duration: 5.5s; animation-delay: -2s; }
+        .journey-page .j-drop:nth-child(8) { left: 88%; animation-duration: 7.5s; animation-delay: -5s; }
+        .journey-page .j-drop:nth-child(9) { left: 95%; animation-duration: 6.5s; animation-delay: -1s; }
+        .journey-page .j-drop:nth-child(10) { left: 36%; animation-duration: 8.5s; animation-delay: -7s; }
+        .journey-page .j-drop:nth-child(11) { left: 72%; animation-duration: 7s; animation-delay: -3s; }
+        .journey-page .j-drop:nth-child(12) { left: 23%; animation-duration: 6s; animation-delay: -4s; }
+
+        .journey-page .j-ripple {
+            position: absolute;
+            bottom: 14%;
+            left: 50%;
+            width: 70px;
+            height: 18px;
+            border: 1px solid rgba(150,225,255,.42);
+            border-radius: 50%;
+            opacity: 0;
+            transform: translateX(-50%) scale(.25);
+            animation: jRipple 4s ease-out infinite;
+        }
+
+        .journey-page .j-ripple:nth-of-type(2) { left: 20%; bottom: 28%; animation-delay: -1s; }
+        .journey-page .j-ripple:nth-of-type(3) { left: 78%; bottom: 35%; animation-delay: -2.5s; }
+        .journey-page .j-ripple:nth-of-type(4) { left: 62%; bottom: 18%; animation-delay: -3s; }
+
+        .journey-page .j-scroll {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,.66);
+            font-size: .68rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            transform: translateX(-50%);
+        }
+
+        .journey-page .j-scroll-line {
+            width: 35px;
+            height: 1px;
+            background: var(--j-blue);
+            animation: jScrollPulse 1.8s ease-in-out infinite;
+        }
+
+        /* STORY */
+        .journey-page .j-story {
+            background: #fff;
+        }
+
+        .journey-page .j-story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: clamp(35px, 7vw, 85px);
+        }
+
+        .journey-page .j-copy h2 {
+            margin: 0 0 22px;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.12;
+            letter-spacing: -.05em;
+        }
+
+        .journey-page .j-copy h2 span {
+            color: var(--j-blue);
+        }
+
+        .journey-page .j-copy p {
+            margin: 0 0 17px;
+            color: var(--j-muted);
+            font-size: 1rem;
+            line-height: 1.95;
+        }
+
+        .journey-page .j-quote {
+            margin-top: 25px;
+            padding: 17px 0 17px 21px;
+            border-left: 3px solid var(--j-gold);
+            color: var(--j-ink);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .journey-page .j-image-frame {
+            position: relative;
+            min-height: 360px;
+        }
+
+        .journey-page .j-image-frame::before {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            width: 55%;
+            height: 55%;
+            border: 1px solid rgba(41,171,226,.55);
+            border-radius: 15px;
+            content: "";
+        }
+
+        .journey-page .j-image-frame img {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 420px;
+            border-radius: 15px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #dff5ff, #dce5f1);
+            box-shadow: 0 22px 55px rgba(22,45,75,.13);
+        }
+
+        .journey-page .j-image-caption {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            left: 15px;
+            padding: 16px 18px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 10px;
+            color: #fff;
+            background: rgba(13,23,37,.76);
+            backdrop-filter: blur(12px);
+        }
+
+        .journey-page .j-image-caption strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: .95rem;
+        }
+
+        .journey-page .j-image-caption span {
+            color: rgba(255,255,255,.73);
+            font-size: .8rem;
+        }
+
+        /* FRIENDSHIP */
+        .journey-page .j-friendship {
+            background: var(--j-light);
+        }
+
+        .journey-page .j-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 48px;
+        }
+
+        .journey-page .j-photo-card {
+            position: relative;
+            min-height: 330px;
+            overflow: hidden;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #d9eff8, #a9c5d7);
+            box-shadow: 0 12px 35px rgba(23,43,67,.08);
+        }
+
+        .journey-page .j-photo-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .journey-page .j-photo-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .journey-page .j-photo-card::after {
+            position: absolute;
+            inset: 30% 0 0;
+            content: "";
+            background: linear-gradient(transparent, rgba(10,18,30,.88));
+        }
+
+        .journey-page .j-photo-label {
+            position: absolute;
+            z-index: 1;
+            right: 20px;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+        }
+
+        .journey-page .j-photo-label h3 {
+            margin: 0 0 7px;
+            font-size: 1.3rem;
+        }
+
+        .journey-page .j-photo-label p {
+            margin: 0;
+            color: rgba(255,255,255,.77);
+            font-size: .88rem;
+            line-height: 1.6;
+        }
+
+        /* PURPOSE */
+        .journey-page .j-purpose {
+            color: #fff;
+            background:
+                radial-gradient(ellipse at 85% 10%, rgba(41,171,226,.17), transparent 42%),
+                #111722;
+        }
+
+        .journey-page .j-purpose .j-heading {
+            color: #fff;
+        }
+
+        .journey-page .j-purpose .j-intro {
+            color: rgba(255,255,255,.7);
+        }
+
+        .journey-page .j-purpose .j-eyebrow {
+            color: var(--j-gold);
+        }
+
+        .journey-page .j-purpose-layout {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            align-items: center;
+            gap: 65px;
+            margin-top: 55px;
+        }
+
+        .journey-page .j-scripture {
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 18px;
+            background: rgba(255,255,255,.045);
+        }
+
+        .journey-page .j-scripture .j-cross {
+            color: var(--j-gold);
+            font-size: 2.2rem;
+        }
+
+        .journey-page .j-scripture blockquote {
+            margin: 20px 0;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+            line-height: 1.55;
+        }
+
+        .journey-page .j-scripture cite {
+            color: #9edfff;
+            font-size: .85rem;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .journey-page .j-purpose-copy h3 {
+            margin: 0 0 15px;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+
+        .journey-page .j-purpose-copy p {
+            color: rgba(255,255,255,.72);
+            font-size: 1rem;
+            line-height: 1.95;
+        }
+
+        /* FAITH IN ACTION */
+        .journey-page .j-action {
+            background: #fff;
+        }
+
+        .journey-page .j-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .journey-page .j-moment {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            align-items: start;
+            gap: 22px;
+            padding: 22px;
+            border: 1px solid #e8edf4;
+            border-radius: 15px;
+            background: #fff;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .journey-page .j-moment:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(23,43,67,.08);
+        }
+
+        .journey-page .j-moment img {
+            width: 140px;
+            height: 155px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #e2eff7;
+        }
+
+        .journey-page .j-moment h3 {
+            margin: 3px 0 9px;
+            font-size: 1.15rem;
+        }
+
+        .journey-page .j-moment p {
+            margin: 0;
+            color: var(--j-muted);
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        .journey-page .j-moment .j-moment-number {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--j-coral);
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        /* THE FUTURE */
+        .journey-page .j-future {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            background:
+                radial-gradient(ellipse at 10% 100%, rgba(41,171,226,.19), transparent 45%),
+                linear-gradient(130deg, #17283a, #111722);
+        }
+
+        .journey-page .j-future .j-heading {
+            color: #fff;
+        }
+
+        .journey-page .j-future .j-intro {
+            color: rgba(255,255,255,.72);
+        }
+
+        .journey-page .j-future .j-eyebrow {
+            color: var(--j-gold);
+        }
+
+        .journey-page .j-future-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 48px;
+        }
+
+        .journey-page .j-future-card {
+            padding: 30px 25px;
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 15px;
+            background: rgba(255,255,255,.045);
+        }
+
+        .journey-page .j-future-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            margin-bottom: 22px;
+            border-radius: 13px;
+            color: #111722;
+            background: var(--j-gold);
+            font-size: 1.25rem;
+        }
+
+        .journey-page .j-future-card h3 {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .journey-page .j-future-card p {
+            margin: 0;
+            color: rgba(255,255,255,.68);
+            font-size: .91rem;
+            line-height: 1.85;
+        }
+
+        /* VALUES */
+        .journey-page .j-foundation {
+            background: var(--j-light);
+        }
+
+        .journey-page .j-values {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 45px;
+        }
+
+        .journey-page .j-value {
+            padding: 32px 25px;
+            border: 1px solid #e5ebf3;
+            border-radius: 15px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .journey-page .j-value-symbol {
+            display: grid;
+            width: 55px;
+            height: 55px;
+            place-items: center;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--j-blue);
+            font-size: 1.3rem;
+        }
+
+        .journey-page .j-value:nth-child(2) .j-value-symbol {
+            color: #24202a;
+            background: var(--j-gold);
+        }
+
+        .journey-page .j-value:nth-child(3) .j-value-symbol {
+            background: var(--j-coral);
+        }
+
+        .journey-page .j-value h3 {
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+        }
+
+        .journey-page .j-value p {
+            margin: 0;
+            color: var(--j-muted);
+            font-size: .92rem;
+            line-height: 1.85;
+        }
+
+        .journey-page .j-mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .journey-page .j-statement {
+            padding: 28px;
+            border-radius: 14px;
+            background: #fff;
+            border: 1px solid #e5ebf3;
+        }
+
+        .journey-page .j-statement h3 {
+            margin: 0 0 12px;
+            color: var(--j-blue);
+            font-size: 1.2rem;
+        }
+
+        .journey-page .j-statement p {
+            margin: 0;
+            color: var(--j-muted);
+            line-height: 1.9;
+        }
+
+        /* COMMUNITY */
+        .journey-page .j-community {
+            background: #fff;
+        }
+
+        .journey-page .j-community-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .journey-page .j-community-photo {
+            width: 100%;
+            height: 430px;
+            border-radius: 16px;
+            object-fit: cover;
+            background: linear-gradient(145deg, #d9eff8, #a9c5d7);
+        }
+
+        .journey-page .j-community-copy h2 {
+            margin: 0 0 20px;
+            font-size: clamp(2rem, 4vw, 3.1rem);
+            line-height: 1.15;
+            letter-spacing: -.05em;
+        }
+
+        .journey-page .j-community-copy h2 span {
+            color: var(--j-blue);
+        }
+
+        .journey-page .j-community-copy p {
+            margin: 0 0 17px;
+            color: var(--j-muted);
+            line-height: 1.95;
+        }
+
+        .journey-page .j-community-list {
+            display: grid;
+            gap: 13px;
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .journey-page .j-community-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--j-ink);
+            line-height: 1.7;
+        }
+
+        .journey-page .j-community-list li span {
+            color: var(--j-blue);
+            font-weight: 900;
+        }
+
+        /* FINAL INVITATION */
+        .journey-page .j-invitation {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 20px;
+            color: #fff;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(41,171,226,.28), transparent 55%),
+                #111722;
+            text-align: center;
+        }
+
+        .journey-page .j-invitation-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 790px;
+            margin: 0 auto;
+        }
+
+        .journey-page .j-invitation .j-eyebrow {
+            color: var(--j-gold);
+        }
+
+        .journey-page .j-invitation h2 {
+            margin: 0 0 20px;
+            font-size: clamp(2.4rem, 6vw, 4.6rem);
+            line-height: 1.06;
+            letter-spacing: -.06em;
+        }
+
+        .journey-page .j-invitation h2 span {
+            color: var(--j-blue);
+        }
+
+        .journey-page .j-invitation p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: rgba(255,255,255,.75);
+            line-height: 1.9;
+        }
+
+        .journey-page .j-invitation .j-hero-actions {
+            margin-top: 30px;
+        }
+
+        .journey-page .j-small-note {
+            margin-top: 25px !important;
+            font-size: .82rem;
+        }
+
+        /* Animations */
+        @keyframes jFall {
+            0% { transform: translate3d(0, -30px, 0); opacity: 0; }
+            10% { opacity: .85; }
+            85% { opacity: .65; }
+            100% { transform: translate3d(20px, 100vh, 0); opacity: 0; }
+        }
+
+        @keyframes jRipple {
+            0% { opacity: 0; transform: translateX(-50%) scale(.25); }
+            20% { opacity: .6; }
+            100% { opacity: 0; transform: translateX(-50%) scale(2.5); }
+        }
+
+        @keyframes jGlow {
+            from { opacity: .55; transform: translateX(-50%) scale(.9); }
+            to { opacity: 1; transform: translateX(-50%) scale(1.08); }
+        }
+
+        @keyframes jContentRise {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes jHeroReveal {
+            from { opacity: 0; transform: scale(1.04); }
+            to { opacity: .42; transform: scale(1); }
+        }
+
+        @keyframes jScrollPulse {
+            0%, 100% { transform: scaleX(.65); opacity: .55; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .journey-page *,
+            .journey-page *::before,
+            .journey-page *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 800px) {
+            .journey-page .j-section {
+                padding: 75px 0;
+            }
+
+            .journey-page .j-story-grid,
+            .journey-page .j-purpose-layout,
+            .journey-page .j-community-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .journey-page .j-story-grid .j-image-frame {
+                order: -1;
+            }
+
+            .journey-page .j-photo-grid,
+            .journey-page .j-future-grid,
+            .journey-page .j-values {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .journey-page .j-photo-card:last-child,
+            .journey-page .j-future-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .journey-page .j-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-page .j-community-photo {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .journey-page .j-container {
+                width: min(100% - 30px, 1120px);
+            }
+
+            .journey-page .j-hero {
+                min-height: 680px;
+                min-height: 88svh;
+                padding-inline: 15px;
+            }
+
+            .journey-page .j-hero h1 {
+                font-size: clamp(2.8rem, 14vw, 4.5rem);
+            }
+
+            .journey-page .j-hero-copy {
+                font-size: .92rem;
+            }
+
+            .journey-page .j-photo-grid,
+            .journey-page .j-future-grid,
+            .journey-page .j-values,
+            .journey-page .j-mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-page .j-photo-card:last-child,
+            .journey-page .j-future-card:last-child {
+                grid-column: auto;
+            }
+
+            .journey-page .j-photo-card {
+                min-height: 300px;
+            }
+
+            .journey-page .j-moment {
+                grid-template-columns: 100px 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .journey-page .j-moment img {
+                width: 100px;
+                height: 125px;
+            }
+
+            .journey-page .j-image-frame {
+                min-height: 300px;
+            }
+
+            .journey-page .j-image-frame img {
+                height: 330px;
+            }
+
+            .journey-page .j-scripture {
+                padding: 25px;
+            }
+
+            .journey-page .j-invitation {
+                padding: 75px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="journey-page">
+
+        <!-- SHARED SITE HEADER -->
+        <header class="site-header">
+            <nav class="navbar container" aria-label="Main navigation">
+                <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+                    <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                    <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                </a>
+
+                <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-menu" id="main-menu">
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="community.html">Community</a>
+                    <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 1. HERO -->
+            <section class="j-hero" id="journey-top">
+                <img
+                    class="j-hero-photo"
+                    src="../assets/images/journey/journey-hero.jpg"
+                    alt="Rafiki Zespół together"
+                    onerror="this.style.display='none'">
+
+                <div class="j-hero-glow"></div>
+
+                <div class="j-water" aria-hidden="true">
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-ripple"></span>
+                    <span class="j-ripple"></span>
+                    <span class="j-ripple"></span>
+                    <span class="j-ripple"></span>
+                </div>
+
+                <div class="j-hero-content">
+                    <div class="j-kicker">Our story · Our calling · Our journey</div>
+                    <h1>Every Journey<br><span>Has a Purpose.</span></h1>
+                    <p class="j-hero-motto">Where Music Meets Purpose.</p>
+                    <p class="j-hero-copy">
+                        We are more than a sound. We are a story of friendship,
+                        faith, worship and a generation choosing to live for
+                        something greater than itself.
+                    </p>
+                    <div class="j-hero-actions">
+                        <a class="j-button j-button-primary" href="#our-story">Discover Our Story ↓</a>
+                        <a class="j-button j-button-outline" href="invite.html">Journey With Us ↗️</a>
+                    </div>
+                </div>
+
+                <div class="j-scroll" aria-hidden="true">
+                    <span class="j-scroll-line"></span>
+                    Scroll to explore
+                    <span class="j-scroll-line"></span>
+                </div>
+            </section>
+
+            <!-- 2. OUR STORY -->
+            <section class="j-section j-story" id="our-story">
+                <div class="j-container j-story-grid">
+                    <div class="j-copy">
+                        <span class="j-eyebrow">Chapter One · The beginning</span>
+                        <h2>Before the Melodies <span>Rose.</span></h2>
+                        <p>
+                            Before the stages, before the songs and before the
+                            moments that would bring us together in worship,
+                            there was friendship. There were conversations,
+                            shared dreams, laughter, prayer and a growing
+                            desire to serve God with the gifts He had placed
+                            in our hands.
+                        </p>
+                        <p>
+                            What began among friends gradually grew into a
+                            shared calling. Music became more than something
+                            we loved; it became a language through which we
+                            could express our faith, encourage others and
+                            point hearts back to Christ.
+                        </p>
+                        <p>
+                            The name Rafiki Zespół carries the spirit of
+                            friendship and togetherness. It reflects the
+                            belief that purpose grows when people walk
+                            together, serve faithfully and make room for
+                            something bigger than themselves.
+                        </p>
+                        <div class="j-quote">
+                            “Some stories begin with a song. Ours began with
+                            friendship, grew through faith and continues
+                            through purpose.”
+                        </div>
+                    </div>
+
+                    <div class="j-image-frame">
+                        <img
+                            src="../assets/images/journey/journey-beginnings.jpg"
+                            alt="The early days of Rafiki Zespół"
+                            loading="lazy"
+                            onerror="this.style.background='linear-gradient(135deg,#dff5ff,#b8d8e8)'">
+                        <div class="j-image-caption">
+                            <strong>Every great story has a beginning.</strong>
+                            <span>A friendship growing into a shared calling.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. FRIENDSHIP -->
+            <section class="j-section j-friendship">
+                <div class="j-container">
+                    <div class="j-center">
+                        <span class="j-eyebrow">More than a group</span>
+                        <h2 class="j-heading">A Bond Beyond <span>the Music.</span></h2>
+                        <p class="j-intro">
+                            The music brings us together, but the relationships
+                            make the journey meaningful. We are learning,
+                            growing, serving and becoming better together —
+                            through the beautiful moments and the difficult ones.
+                        </p>
+                    </div>
+
+                    <div class="j-photo-grid">
+                        <article class="j-photo-card">
+                            <img
+                                src="../assets/images/journey/journey-friendship.jpg"
+                                alt="Rafiki members sharing friendship"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div class="j-photo-label">
+                                <h3>Friendship</h3>
+                                <p>Real relationships that make room for belonging and growth.</p>
+                            </div>
+                        </article>
+
+                        <article class="j-photo-card">
+                            <img
+                                src="../assets/images/journey/journey-worship.jpg"
+                                alt="Rafiki Zespół in a moment of worship"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div class="j-photo-label">
+                                <h3>One Heart in Worship</h3>
+                                <p>Different gifts, one desire to honour God.</p>
+                            </div>
+                        </article>
+
+                        <article class="j-photo-card">
+                            <img
+                                src="../assets/images/journey/journey-community.jpg"
+                                alt="Rafiki Zespół in community"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div class="j-photo-label">
+                                <h3>Growing Together</h3>
+                                <p>A community shaped by faith, service and encouragement.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. OUR PURPOSE -->
+            <section class="j-section j-purpose" id="our-purpose">
+                <div class="j-container">
+                    <div class="j-center">
+                        <span class="j-eyebrow">Chapter Two · The why</span>
+                        <h2 class="j-heading">More Than Music. <span>A Calling.</span></h2>
+                        <p class="j-intro">
+                            We believe that music can open hearts, strengthen
+                            faith and create moments in which people encounter
+                            the hope of Christ.
+                        </p>
+                    </div>
+
+                    <div class="j-purpose-layout">
+                        <div class="j-scripture">
+                            <div class="j-cross" aria-hidden="true">✦</div>
+                            <blockquote>
+                                “For when David had served God's purpose in his
+                                own generation, he fell asleep.”
+                            </blockquote>
+                            <cite>Acts 13:36 · Our foundation</cite>
+                        </div>
+
+                        <div class="j-purpose-copy">
+                            <h3>To serve God's purpose in our generation.</h3>
+                            <p>
+                                Acts 13:36 reminds us that a life becomes
+                                meaningful when it serves God's purpose in
+                                its own generation. This truth shapes how we
+                                approach our music, our relationships and our
+                                ministry.
+                            </p>
+                            <p>
+                                We do not want to make music simply to be heard.
+                                We want our sound to carry a message of hope,
+                                our worship to point to Jesus, and our lives
+                                to reflect the love we sing about.
+                            </p>
+                            <p>
+                                Every rehearsal, every invitation, every
+                                outreach and every song is an opportunity to
+                                serve with sincerity and faithfulness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. FAITH IN ACTION -->
+            <section class="j-section j-action" id="faith-in-action">
+                <div class="j-container">
+                    <div class="j-center">
+                        <span class="j-eyebrow">Chapter Three · The moments</span>
+                        <h2 class="j-heading">Faith in <span>Action.</span></h2>
+                        <p class="j-intro">
+                            Our story is written in more than performances.
+                            It lives in the places we serve, the people we
+                            encourage and the moments we share with others.
+                        </p>
+                    </div>
+
+                    <div class="j-timeline">
+                        <article class="j-moment">
+                            <img
+                                src="../assets/images/journey/journey-wedding.jpg"
+                                alt="Rafiki serving at a wedding"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div>
+                                <span class="j-moment-number">01 · Celebration</span>
+                                <h3>Weddings &amp; Special Occasions</h3>
+                                <p>
+                                    Sharing music that adds warmth, meaning
+                                    and joy to the milestones that matter
+                                    in people's lives.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="j-moment">
+                            <img
+                                src="../assets/images/journey/journey-celebration.jpg"
+                                alt="A celebration with Rafiki Zespół"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div>
+                                <span class="j-moment-number">02 · Fellowship</span>
+                                <h3>Celebrations &amp; Gatherings</h3>
+                                <p>
+                                    Coming together through music, fellowship
+                                    and shared experiences that strengthen
+                                    relationships and faith.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="j-moment">
+                            <img
+                                src="../assets/images/journey/journey-outreach.jpg"
+                                alt="Rafiki participating in community outreach"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div>
+                                <span class="j-moment-number">03 · Compassion</span>
+                                <h3>Outreach &amp; Children's Homes</h3>
+                                <p>
+                                    Taking time to encourage, listen, share
+                                    love and remind others that they are seen
+                                    and valued.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="j-moment">
+                            <img
+                                src="../assets/images/journey/journey-ministry.jpg"
+                                alt="Rafiki serving through music ministry"
+                                loading="lazy"
+                                onerror="this.style.display='none'">
+                            <div>
+                                <span class="j-moment-number">04 · Ministry</span>
+                                <h3>Worship &amp; Ministry</h3>
+                                <p>
+                                    Using our gifts to serve churches,
+                                    encourage believers and create space
+                                    for meaningful worship encounters.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. THE JOURNEY AHEAD -->
+            <section class="j-section j-future" id="journey-ahead">
+                <div class="j-container">
+                    <div class="j-center">
+                        <span class="j-eyebrow">Chapter Four · The vision</span>
+                        <h2 class="j-heading">The Journey <span>Continues.</span></h2>
+                        <p class="j-intro">
+                            We are grateful for where the story began, but
+                            we believe there is still more to build, more
+                            people to reach and more purpose to fulfil.
+                        </p>
+                    </div>
+
+                    <div class="j-future-grid">
+                        <article class="j-future-card">
+                            <div class="j-future-icon" aria-hidden="true">♫</div>
+                            <h3>Creative Expression</h3>
+                            <p>
+                                Developing music, worship experiences and
+                                storytelling that communicate faith with
+                                excellence, authenticity and creativity.
+                            </p>
+                        </article>
+
+                        <article class="j-future-card">
+                            <div class="j-future-icon" aria-hidden="true">✧</div>
+                            <h3>Youth &amp; Mentorship</h3>
+                            <p>
+                                Encouraging young people to discover their
+                                gifts, grow in character and use their talents
+                                in service of God's purpose.
+                            </p>
+                        </article>
+
+                        <article class="j-future-card">
+                            <div class="j-future-icon" aria-hidden="true">∞</div>
+                            <h3>Community Impact</h3>
+                            <p>
+                                Building meaningful partnerships and creating
+                                opportunities to serve, connect and bring
+                                encouragement beyond the stage.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. VALUES, MISSION AND VISION -->
+            <section class="j-section j-foundation" id="our-foundation">
+                <div class="j-container">
+                    <div class="j-center">
+                        <span class="j-eyebrow">What keeps us grounded</span>
+                        <h2 class="j-heading">Our Foundation. <span>Our Future.</span></h2>
+                        <p class="j-intro">
+                            As the journey grows, we want the heart behind it
+                            to remain clear. These are the values that guide
+                            how we worship, serve and walk together.
+                        </p>
+                    </div>
+
+                    <div class="j-values">
+                        <article class="j-value">
+                            <div class="j-value-symbol" aria-hidden="true">♫</div>
+                            <h3>Worship</h3>
+                            <p>
+                                We offer our gifts with humility, excellence
+                                and a heart that seeks to honour God above
+                                recognition.
+                            </p>
+                        </article>
+
+                        <article class="j-value">
+                            <div class="j-value-symbol" aria-hidden="true">✦</div>
+                            <h3>Purpose</h3>
+                            <p>
+                                We want our music, decisions and relationships
+                                to contribute meaningfully to God's purpose
+                                in our generation.
+                            </p>
+                        </article>
+
+                        <article class="j-value">
+                            <div class="j-value-symbol" aria-hidden="true">♡</div>
+                            <h3>Love</h3>
+                            <p>
+                                We choose compassion, unity, friendship and
+                                service, remembering the people behind
+                                every moment.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="j-mission-vision">
+                        <article class="j-statement">
+                            <h3>Our Mission</h3>
+                            <p>
+                                To spread the message of Christ through
+                                heartfelt music, worship encounters and
+                                youth-centered outreach that inspire hope,
+                                faith and godly living.
+                            </p>
+                        </article>
+
+                        <article class="j-statement">
+                            <h3>Our Vision</h3>
+                            <p>
+                                To raise a generation of young believers who
+                                find purpose, identity and fulfillment in
+                                Christ through the transforming power of
+                                music and worship.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. COMMUNITY AND PARTNERSHIP -->
+            <section class="j-section j-community" id="our-community">
+                <div class="j-container j-community-grid">
+                    <img
+                        class="j-community-photo"
+                        src="../assets/images/journey/journey-community.jpg"
+                        alt="Rafiki Zespół sharing fellowship and community"
+                        loading="lazy"
+                        onerror="this.style.background='linear-gradient(135deg,#dff5ff,#b8d8e8)'">
+
+                    <div class="j-community-copy">
+                        <span class="j-eyebrow">A story we share</span>
+                        <h2>We Were Never Meant to Walk <span>Alone.</span></h2>
+                        <p>
+                            No meaningful journey is built by one person.
+                            Rafiki Zespół is shaped by the people who pray
+                            with us, serve alongside us, open doors, share
+                            their gifts and believe in the vision.
+                        </p>
+                        <p>
+                            We welcome genuine connections with churches,
+                            creatives, organisations, volunteers and partners
+                            who share a heart for faith, music, young people
+                            and community impact.
+                        </p>
+
+                        <ul class="j-community-list">
+                            <li><span>✓</span> Serve with us through volunteering and outreach.</li>
+                            <li><span>✓</span> Partner with us to support meaningful ministry.</li>
+                            <li><span>✓</span> Invite us to worship gatherings and special events.</li>
+                            <li><span>✓</span> Help us encourage the next generation through music.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. INVITATION -->
+            <section class="j-invitation" id="be-part-of-our-story">
+                <div class="j-water" aria-hidden="true">
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                    <span class="j-drop"></span>
+                </div>
+
+                <div class="j-invitation-inner">
+                    <span class="j-eyebrow">The next chapter is still being written</span>
+                    <h2>Be Part of <span>Our Story.</span></h2>
+                    <p>
+                        Perhaps your place in this story is to worship with
+                        us, invite us, serve alongside us, partner with the
+                        vision or simply share the message with someone who
+                        needs encouragement. There is room to walk together.
+                    </p>
+
+                    <div class="j-hero-actions">
+                        <a class="j-button j-button-primary" href="invite.html">Invite Rafiki ↗️</a>
+                        <a class="j-button j-button-outline" href="volunteer.html">Serve With Us</a>
+                        <a class="j-button j-button-outline" href="contact.html">Get in Touch</a>
+                    </div>
+
+                    <p class="j-small-note">
+                        Rafiki Zespół — Where Music Meets Purpose.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- SHARED SITE FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a class="brand" href="../index.html">
+                            <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                            <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                        </a>
+                        <p>
+                            Where Music Meets Purpose. Serving God's purpose
+                            in our generation through music and worship.
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Discover</h4>
+                        <a href="about.html">About Rafiki</a>
+                        <a href="vision.html">Our Vision</a>
+                        <a href="mission.html">Our Mission</a>
+                        <a href="journey.html">Our Journey</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Our Ministry</h4>
+                        <a href="ministry.html">Ministry</a>
+                        <a href="music.html">Sound &amp; Media</a>
+                        <a href="events.html">Events</a>
+                        <a href="community.html">Community</a>
+                        <a href="gallery.html">Gallery</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Get Involved</h4>
+                        <a href="invite.html">Invite Rafiki</a>
+                        <a href="volunteer.html">Volunteer</a>
+                        <a href="partner.html">Partner With Us</a>
+                        <a href="support.html">Support the Vision</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-inner">
+                        <p>©️ <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                        <div class="footer-legal">
+                            <a href="privacy-policy.html">Privacy</a>
+                            <a href="terms.html">Terms</a>
+                            <a href="disclaimer.html">Disclaimer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Update the footer year even if the shared JavaScript changes.
+        document.querySelectorAll('[data-current-year]').forEach(function (element) {
+            element.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

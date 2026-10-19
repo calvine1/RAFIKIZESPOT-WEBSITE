@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the Rafiki Zespół website disclaimer covering ministry content, intellectual property, media, events and merchandise.">
+    <meta name="theme-color" content="#1A1A1A">
+
+    <title>Disclaimer | Rafiki Zespół</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <style>
+        :root {
+            --disclaimer-blue: #29ABE2;
+            --disclaimer-gold: #F7C32E;
+            --disclaimer-dark: #1A1A1A;
+            --disclaimer-muted: #687383;
+            --disclaimer-soft: #F7FAFF;
+            --disclaimer-line: #E5E5EB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .disclaimer-page {
+            padding-top: var(--header-height, 82px);
+            color: #202733;
+        }
+
+        /* LIGHT & CLARITY HERO */
+        .disclaimer-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: var(--disclaimer-dark);
+            color: #fff;
+            padding: clamp(75px, 10vw, 125px) 0;
+        }
+
+        .disclaimer-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 520px;
+            height: 520px;
+            right: -150px;
+            top: -290px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(41,171,226,.25) 0%,
+                rgba(41,171,226,.08) 36%,
+                transparent 70%
+            );
+            animation: clarityGlow 7s ease-in-out infinite alternate;
+        }
+
+        .disclaimer-hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: -60%;
+            width: 35%;
+            background: linear-gradient(
+                100deg,
+                transparent,
+                rgba(255,255,255,.055),
+                rgba(247,195,46,.09),
+                transparent
+            );
+            transform: skewX(-18deg);
+            animation: claritySweep 9s ease-in-out infinite;
+        }
+
+        .disclaimer-hero-inner,
+        .disclaimer-layout {
+            width: min(1200px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .disclaimer-hero-inner {
+            position: relative;
+        }
+
+        .disclaimer-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--disclaimer-gold);
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            animation: clarityEnter .8s .1s both;
+        }
+
+        .disclaimer-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 2px;
+            background: var(--disclaimer-gold);
+        }
+
+        .disclaimer-hero h1 {
+            max-width: 900px;
+            margin: 24px 0 20px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3.4rem, 9vw, 7.5rem);
+            line-height: .95;
+            letter-spacing: -.075em;
+            animation: clarityEnter .9s .2s both;
+        }
+
+        .disclaimer-hero h1 span {
+            color: var(--disclaimer-blue);
+        }
+
+        .disclaimer-hero-copy {
+            max-width: 640px;
+            margin: 0;
+            color: rgba(255,255,255,.75);
+            font-size: 1.04rem;
+            line-height: 1.9;
+            animation: clarityEnter .9s .35s both;
+        }
+
+        .disclaimer-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+            margin-top: 28px;
+            color: rgba(255,255,255,.75);
+            font-size: .87rem;
+            animation: clarityEnter .9s .5s both;
+        }
+
+        .disclaimer-meta span::before {
+            content: "✦";
+            margin-right: 9px;
+            color: var(--disclaimer-gold);
+        }
+
+        /* READING PROGRESS */
+        .disclaimer-progress {
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        .disclaimer-progress-bar {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                var(--disclaimer-blue),
+                var(--disclaimer-gold)
+            );
+            box-shadow: 0 0 10px rgba(41,171,226,.4);
+        }
+
+        /* CONTENT LAYOUT */
+        .disclaimer-layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: clamp(35px, 6vw, 80px);
+            align-items: start;
+            padding-top: 75px;
+            padding-bottom: 95px;
+        }
+
+        .disclaimer-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .disclaimer-sidebar-label {
+            margin: 0 0 18px;
+            color: var(--disclaimer-muted);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .disclaimer-toc {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-left: 1px solid var(--disclaimer-line);
+        }
+
+        .disclaimer-toc a {
+            display: block;
+            margin-left: -1px;
+            padding: 9px 12px 9px 16px;
+            border-left: 2px solid transparent;
+            color: #687383;
+            font-size: .87rem;
+            line-height: 1.5;
+            text-decoration: none;
+            transition: color .25s ease, border-color .25s ease,
+                        transform .25s ease;
+        }
+
+        .disclaimer-toc a:hover,
+        .disclaimer-toc a.active {
+            color: var(--disclaimer-dark);
+            border-left-color: var(--disclaimer-blue);
+            transform: translateX(3px);
+        }
+
+        .disclaimer-toc a.active {
+            font-weight: 700;
+        }
+
+        .disclaimer-contact-card {
+            margin-top: 28px;
+            padding: 22px;
+            border: 1px solid #eaf0f8;
+            border-radius: 15px;
+            background: var(--disclaimer-soft);
+        }
+
+        .disclaimer-contact-card strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .disclaimer-contact-card p {
+            color: var(--disclaimer-muted);
+            font-size: .86rem;
+            line-height: 1.7;
+        }
+
+        .disclaimer-contact-card a {
+            color: #087eae;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .disclaimer-toc-mobile {
+            display: none;
+        }
+
+        .disclaimer-intro {
+            margin: 0 0 10px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--disclaimer-line);
+            color: var(--disclaimer-muted);
+            font-size: 1.02rem;
+            line-height: 1.9;
+        }
+
+        /* SECTION DESIGN */
+        .disclaimer-section {
+            position: relative;
+            padding: 36px 0 38px 65px;
+            border-bottom: 1px solid var(--disclaimer-line);
+            scroll-margin-top: 110px;
+        }
+
+        .disclaimer-section:last-child {
+            border-bottom: 0;
+        }
+
+        .disclaimer-number {
+            position: absolute;
+            top: 38px;
+            left: 0;
+            color: var(--disclaimer-blue);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .disclaimer-number::after {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 2px;
+            margin-top: 9px;
+            background: var(--disclaimer-gold);
+            transform-origin: left;
+            transition: width .35s ease;
+        }
+
+        .disclaimer-section:hover .disclaimer-number::after {
+            width: 42px;
+        }
+
+        .disclaimer-section h2 {
+            margin: 0 0 18px;
+            color: var(--disclaimer-dark);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+            line-height: 1.3;
+            letter-spacing: -.035em;
+        }
+
+        .disclaimer-section p {
+            margin: 0 0 15px;
+            color: #566171;
+            font-size: .96rem;
+            line-height: 1.9;
+        }
+
+        .disclaimer-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .disclaimer-section a,
+        .disclaimer-last-note a {
+            color: #087eae;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        .disclaimer-callout {
+            margin-top: 20px;
+            padding: 20px 22px;
+            border-left: 3px solid var(--disclaimer-gold);
+            border-radius: 0 12px 12px 0;
+            background: #fffaf0;
+            color: #5e5a4d;
+            font-size: .93rem;
+            line-height: 1.8;
+        }
+
+        .disclaimer-last-note {
+            margin-top: 28px;
+            padding: 23px;
+            border: 1px solid var(--disclaimer-line);
+            border-radius: 14px;
+            background: var(--disclaimer-soft);
+            color: var(--disclaimer-muted);
+            font-size: .91rem;
+            line-height: 1.8;
+        }
+
+        .disclaimer-back-top {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--disclaimer-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .disclaimer-back-top span {
+            color: var(--disclaimer-blue);
+        }
+
+        /* STAGGERED SCROLL REVEAL */
+        .disclaimer-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .js-ready .disclaimer-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition:
+                opacity .7s ease,
+                transform .7s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .js-ready .disclaimer-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes clarityEnter {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes clarityGlow {
+            from {
+                transform: scale(.9);
+                opacity: .6;
+            }
+            to {
+                transform: scale(1.12);
+                opacity: 1;
+            }
+        }
+
+        @keyframes claritySweep {
+            0%, 15% {
+                left: -60%;
+            }
+            60%, 100% {
+                left: 130%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .disclaimer-layout {
+                grid-template-columns: 220px minmax(0, 1fr);
+                gap: 30px;
+            }
+
+            .disclaimer-section {
+                padding-left: 52px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .disclaimer-hero {
+                padding: 75px 0;
+            }
+
+            .disclaimer-hero::before {
+                right: -350px;
+            }
+
+            .disclaimer-layout {
+                display: block;
+                padding-top: 42px;
+                padding-bottom: 65px;
+            }
+
+            .disclaimer-sidebar {
+                position: static;
+                margin-bottom: 32px;
+            }
+
+            .disclaimer-toc-mobile {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 14px 16px;
+                border: 1px solid var(--disclaimer-line);
+                border-radius: 12px;
+                background: #fff;
+                color: var(--disclaimer-dark);
+                font: inherit;
+                font-weight: 700;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            .disclaimer-toc-mobile span {
+                color: var(--disclaimer-blue);
+                transition: transform .25s ease;
+            }
+
+            .disclaimer-sidebar.is-open .disclaimer-toc-mobile span {
+                transform: rotate(180deg);
+            }
+
+            .disclaimer-toc {
+                display: none;
+                margin-top: 10px;
+            }
+
+            .disclaimer-sidebar.is-open .disclaimer-toc {
+                display: block;
+            }
+
+            .disclaimer-contact-card {
+                margin-top: 18px;
+            }
+
+            .disclaimer-section {
+                padding: 30px 0 32px 42px;
+            }
+
+            .disclaimer-number {
+                top: 33px;
+                font-size: .9rem;
+            }
+
+            .disclaimer-section h2 {
+                font-size: 1.45rem;
+            }
+
+            .disclaimer-section p {
+                font-size: .93rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .js-ready .disclaimer-reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+<div class="disclaimer-progress" aria-hidden="true">
+    <div class="disclaimer-progress-bar" id="disclaimer-progress-bar"></div>
+</div>
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+            <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+            <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="ministry.html">Ministry</a>
+            <a href="music.html">Sound &amp; Media</a>
+            <a href="events.html">Events</a>
+            <a href="community.html">Community</a>
+            <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+        </div>
+    </nav>
+</header>
+
+<main class="disclaimer-page">
+
+    <section class="disclaimer-hero">
+        <div class="disclaimer-hero-inner">
+            <div class="disclaimer-eyebrow">Transparency. Responsibility. Trust.</div>
+
+            <h1>Clarity in<br><span>Every Word.</span></h1>
+
+            <p class="disclaimer-hero-copy">
+                Important information about our ministry content, creative work,
+                events and online services — shared with honesty, care and respect.
+            </p>
+
+            <div class="disclaimer-meta">
+                <span>Rafiki Zespół</span>
+                <span>Last updated: 19 October 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="disclaimer-layout">
+
+        <aside class="disclaimer-sidebar" id="disclaimer-sidebar">
+            <p class="disclaimer-sidebar-label">Explore this page</p>
+
+            <button
+                class="disclaimer-toc-mobile"
+                type="button"
+                aria-expanded="false"
+                aria-controls="disclaimer-toc">
+                Browse sections <span aria-hidden="true">⌄</span>
+            </button>
+
+            <ol class="disclaimer-toc" id="disclaimer-toc">
+                <li><a href="#section-1">1. General Information</a></li>
+                <li><a href="#section-2">2. Religious Content</a></li>
+                <li><a href="#section-3">3. Original Content</a></li>
+                <li><a href="#section-4">4. Third-Party Media</a></li>
+                <li><a href="#section-5">5. Event Photography</a></li>
+                <li><a href="#section-6">6. External Links</a></li>
+                <li><a href="#section-7">7. Merchandise</a></li>
+                <li><a href="#section-8">8. Events and Announcements</a></li>
+                <li><a href="#section-9">9. Website Availability</a></li>
+                <li><a href="#section-10">10. Liability</a></li>
+                <li><a href="#section-11">11. Changes</a></li>
+                <li><a href="#section-12">12. Contact Us</a></li>
+            </ol>
+
+            <div class="disclaimer-contact-card">
+                <strong>Have a concern?</strong>
+                <p>Questions about copyright, photographs or website publications? Contact our team.</p>
+                <a href="mailto:rafikizespol24@gmail.com">Contact Rafiki ↗</a>
+            </div>
+        </aside>
+
+        <article class="disclaimer-content">
+
+            <p class="disclaimer-intro disclaimer-reveal">
+                This Disclaimer explains the purpose and limitations of the information
+                and media published on the Rafiki Zespół website. Please read it
+                alongside our Terms and Conditions and Privacy Policy.
+            </p>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-1">
+                <span class="disclaimer-number">01</span>
+                <h2>General Information</h2>
+                <p>The Rafiki Zespół website is intended to share information about our Christian music and worship ministry, music, events, reflections, creative work, community activities, outreach and merchandise.</p>
+                <p>We make reasonable efforts to publish content that is useful, responsible and accurate. However, information may occasionally be incomplete, outdated or subject to change.</p>
+                <p>Unless expressly stated otherwise, the website and its content are provided for general informational, creative, spiritual and educational purposes.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-2">
+                <span class="disclaimer-number">02</span>
+                <h2>Religious Content and Personal Opinions</h2>
+                <p>Rafiki Zespół is a Christian music and worship ministry. Our website may feature biblical reflections, devotional articles, testimonies, worship messages, interviews and personal perspectives.</p>
+                <p>Such material is published in the context of our ministry and its mission.</p>
+                <p>Individual contributions, quotations, testimonies or opinions do not necessarily represent the personal views of every Rafiki member, contributor, partner or event participant.</p>
+                <p>Spiritual reflections are not a substitute for professional advice where specialist assistance is needed, including medical, psychological, legal or financial advice.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-3">
+                <span class="disclaimer-number">03</span>
+                <h2>Original Content and Intellectual Property</h2>
+                <p>Rafiki respects intellectual property rights and expects others to respect ours.</p>
+                <p>Unless otherwise indicated, original photographs, videos, music, graphics, written articles, logos, designs and other works created by Rafiki or lawfully controlled by us are protected by applicable intellectual property laws.</p>
+                <p>You may not reproduce, republish, distribute, modify, commercially exploit or use protected Rafiki material in a manner that requires permission without obtaining the necessary authorisation, except where applicable law permits the use.</p>
+                <p>Displaying, sharing or linking to a Rafiki publication does not automatically grant permission to reproduce the underlying material.</p>
+                <p>Requests to use our original content should be sent to <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a>, identifying the work and proposed use.</p>
+                <p>Nothing in this Disclaimer is intended to prohibit uses that are permitted by law.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-4">
+                <span class="disclaimer-number">04</span>
+                <h2>Third-Party Content, Photographs and Media</h2>
+                <p>The website may contain photographs, quotations, song references, articles, videos, artwork, logos or other material belonging to third parties.</p>
+                <p>We may publish such material where we have obtained appropriate permission or a licence, where another lawful basis applies, or where the use is otherwise permitted by applicable law.</p>
+                <p>We aim to acknowledge creators and sources where appropriate or legally required. However, giving credit does not by itself establish permission to use copyrighted material.</p>
+                <p>Third-party content remains subject to the rights of its respective owner. Its appearance on this website does not mean that Rafiki owns, endorses or controls every aspect of that content.</p>
+                <p>If you own or represent rights in material that you believe has been published improperly, please contact <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a>. Include a link or description of the material, your concern, relevant evidence of ownership or authority, and the remedy you are seeking.</p>
+                <p>We will review genuine complaints and take appropriate action where warranted, which may include correcting attribution, restricting access or removing material.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-5">
+                <span class="disclaimer-number">05</span>
+                <h2>Event Photography, Video and Audio</h2>
+                <p>Rafiki may document worship gatherings, concerts, rehearsals, outreach programmes, community activities and other events through photography, video or audio recording.</p>
+                <p>These materials may be used for legitimate ministry communications and, where the necessary permissions or other lawful basis exist, for event posters, website publications, social media, ministry reports and future event promotion.</p>
+                <p>We aim to communicate photography arrangements clearly and respect applicable privacy and consent requirements.</p>
+                <p>Attendance at an event should not be understood as an unlimited waiver of a person’s privacy or image-related rights. We will obtain appropriate consent or establish another lawful basis where required, with particular care for children and vulnerable individuals.</p>
+                <p>If you have a concern about an image or recording, email <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a>. Please identify the event and material concerned and explain your request. We will review it and take appropriate action, subject to applicable law and any relevant legal obligations.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-6">
+                <span class="disclaimer-number">06</span>
+                <h2>External Links and Embedded Media</h2>
+                <p>Our website may link to or embed material from third-party websites and platforms, including YouTube, social media services, payment providers and other external services.</p>
+                <p>These websites operate independently. We do not control all their content, availability, privacy practices, security measures or terms of service.</p>
+                <p>An external link or embedded video is provided for convenience or information and does not automatically imply endorsement of the external website or everything published there.</p>
+                <p>Visitors should review the relevant third party’s terms and privacy policy before interacting with its services.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-7">
+                <span class="disclaimer-number">07</span>
+                <h2>Merchandise and Product Information</h2>
+                <p>Where Rafiki offers merchandise, we aim to describe products, prices and availability accurately.</p>
+                <p>Product photographs and illustrations may not perfectly reflect the colour, appearance, packaging or dimensions of the actual item. Availability, prices and delivery estimates may change.</p>
+                <p>Product-specific information and our applicable shopping, delivery, return and refund terms should be reviewed before purchase.</p>
+                <p>Nothing in this Disclaimer removes consumer rights or remedies that apply under the law.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-8">
+                <span class="disclaimer-number">08</span>
+                <h2>Events, Schedules and Announcements</h2>
+                <p>Event dates, venues, speakers, performers, programmes, participation arrangements and other details may change because of operational requirements or circumstances beyond our control.</p>
+                <p>We encourage visitors to verify important details through our official communication channels before travelling or making arrangements.</p>
+                <p>This Disclaimer does not remove any refund, contractual or other rights that may apply to a ticket, registration or paid service.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-9">
+                <span class="disclaimer-number">09</span>
+                <h2>Website Availability and Technical Issues</h2>
+                <p>We endeavour to maintain a useful and accessible website. Nevertheless, the website may occasionally experience maintenance, interruptions, errors or technical difficulties.</p>
+                <p>We do not warrant uninterrupted or error-free operation. We will take reasonable steps to address material problems, but cannot guarantee that every defect will be prevented or immediately resolved.</p>
+                <p>Visitors are responsible for maintaining appropriate security on their own devices and accounts.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-10">
+                <span class="disclaimer-number">10</span>
+                <h2>No Unlawful Exclusion of Liability</h2>
+                <p>To the extent permitted by law, Rafiki is not responsible for losses arising solely from inaccurate or outdated general information, independent third-party services, internet disruptions or other circumstances outside our reasonable control.</p>
+                <p>However, nothing in this Disclaimer excludes or limits any liability, duty or consumer protection that cannot lawfully be excluded or limited under applicable law.</p>
+                <p>This Disclaimer does not replace our Privacy Policy, Terms and Conditions, or any additional contractual terms that apply to a particular service or purchase.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-11">
+                <span class="disclaimer-number">11</span>
+                <h2>Changes to This Disclaimer</h2>
+                <p>We may update this Disclaimer to reflect changes in our website, ministry activities, content or legal obligations.</p>
+                <p>The current version will be published on this page with the latest revision date.</p>
+            </section>
+
+            <section class="disclaimer-section disclaimer-reveal" id="section-12">
+                <span class="disclaimer-number">12</span>
+                <h2>Contact Us</h2>
+                <p>For questions about this Disclaimer, copyright, photography, third-party content or website publications, contact:</p>
+
+                <p>
+                    <strong>Rafiki Zespół</strong><br>
+                    Email:
+                    <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a>
+                </p>
+
+                <div class="disclaimer-callout">
+                    We appreciate the cooperation of visitors, creators, photographers,
+                    musicians, ministry partners and event participants in helping us
+                    maintain a respectful, responsible and legally compliant online presence.
+                </div>
+            </section>
+
+            <div class="disclaimer-last-note disclaimer-reveal">
+                For further information, please read our
+                <a href="privacy-policy.html">Privacy Policy</a>
+                and <a href="terms.html">Terms and Conditions</a>.
+            </div>
+
+            <a class="disclaimer-back-top" href="#top">
+                Back to top <span>↑</span>
+            </a>
+
+        </article>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="../index.html">
+                    <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                    <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                </a>
+                <p>
+                    Where Music Meets Purpose. Serving God's purpose
+                    in our generation through music and worship.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Discover</h4>
+                <a href="about.html">About Rafiki</a>
+                <a href="vision.html">Our Vision</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="journey.html">Our Journey</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Our Ministry</h4>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Get Involved</h4>
+                <a href="invite.html">Invite Rafiki</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="partner.html">Partner With Us</a>
+                <a href="support.html">Support the Vision</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p>©️ <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="disclaimer.html" aria-current="page">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(() => {
+    const progressBar = document.getElementById("disclaimer-progress-bar");
+    const sidebar = document.getElementById("disclaimer-sidebar");
+    const toggle = document.querySelector(".disclaimer-toc-mobile");
+    const links = [...document.querySelectorAll(".disclaimer-toc a")];
+    const sections = [...document.querySelectorAll(".disclaimer-section")];
+    const revealItems = document.querySelectorAll(".disclaimer-reveal");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* Reading progress indicator */
+    function updateReadingProgress() {
+        if (!progressBar) return;
+
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = scrollableHeight > 0
+            ? (window.scrollY / scrollableHeight) * 100
+            : 0;
+
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + "%";
+    }
+
+    updateReadingProgress();
+
+    window.addEventListener("scroll", updateReadingProgress, {
+        passive: true
+    });
+
+    window.addEventListener("resize", updateReadingProgress);
+
+    /* Mobile contents menu */
+    if (toggle && sidebar) {
+        toggle.addEventListener("click", () => {
+            const isOpen = sidebar.classList.toggle("is-open");
+            toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+    }
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            if (sidebar && toggle && window.innerWidth <= 700) {
+                sidebar.classList.remove("is-open");
+                toggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+
+    /* Scroll reveal and active section navigation */
+    if ("IntersectionObserver" in window && !reducedMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: "0px 0px -25px 0px"
+        });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    links.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === "#" + entry.target.id
+                        );
+                    });
+                }
+            });
+        }, {
+            rootMargin: "-18% 0px -68% 0px",
+            threshold: 0
+        });
+
+        sections.forEach(section => sectionObserver.observe(section));
+    } else {
+        revealItems.forEach(item => item.classList.add("is-visible"));
+    }
+})();
+</script>
+
+</body>
+</html>

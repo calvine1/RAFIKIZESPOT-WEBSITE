@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Community &amp; Outreach | Rafiki Zespół</title>
+
+    <meta name="description" content="Discover the Rafiki Zespół community, our heart for outreach, opportunities to volunteer, and ways to serve God's purpose in our generation.">
+    <meta name="theme-color" content="#29ABE2">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* =========================================
+           RAFIKI ZESPÓŁ COMMUNITY PAGE
+           Page-specific styles only
+        ========================================= */
+
+        .community-page {
+            --community-blue: #29ABE2;
+            --community-dark: #1A1A1A;
+            --community-yellow: #F7C32E;
+            --community-coral: #E8735A;
+            --community-soft: #F7FAFF;
+            --community-gray: #8C8C8C;
+            --community-border: #E5E5EB;
+
+            position: relative;
+            overflow: hidden;
+            color: var(--community-dark);
+            background: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .community-page *,
+        .community-page *::before,
+        .community-page *::after {
+            box-sizing: border-box;
+        }
+
+        .community-page img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .community-page a {
+            text-decoration: none;
+        }
+
+        .community-page h1,
+        .community-page h2,
+        .community-page h3,
+        .community-page h4 {
+            color: var(--community-dark);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.15;
+        }
+
+        .community-page p {
+            line-height: 1.8;
+        }
+
+        .community-page .community-container {
+            width: min(1160px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .community-page .community-section {
+            padding: 76px 0;
+        }
+
+        .community-page .community-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 16px;
+            color: #1689BB;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .community-page .community-eyebrow::before {
+            content: "";
+            width: 24px;
+            height: 3px;
+            border-radius: 99px;
+            background: var(--community-yellow);
+        }
+
+        .community-page .community-heading {
+            max-width: 760px;
+            margin: 0 auto 16px;
+            font-size: clamp(2rem, 4.2vw, 3.25rem);
+            letter-spacing: -0.055em;
+        }
+
+        .community-page .community-intro {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #666A73;
+            font-size: 1rem;
+        }
+
+        .community-page .community-center {
+            text-align: center;
+        }
+
+        .community-page .community-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .community-page .community-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 13px 21px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            font: 700 0.9rem 'Inter', sans-serif;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.25s ease,
+                        background 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
+
+        .community-page .community-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .community-page .community-btn-primary {
+            color: #FFFFFF;
+            background: var(--community-dark);
+        }
+
+        .community-page .community-btn-primary:hover {
+            color: #FFFFFF;
+            background: #30343B;
+            box-shadow: 0 10px 25px rgba(26, 26, 26, 0.14);
+        }
+
+        .community-page .community-btn-yellow {
+            color: var(--community-dark);
+            background: var(--community-yellow);
+        }
+
+        .community-page .community-btn-yellow:hover {
+            color: var(--community-dark);
+            background: #FFD95D;
+        }
+
+        .community-page .community-btn-outline {
+            color: var(--community-dark);
+            background: transparent;
+            border-color: rgba(26, 26, 26, 0.2);
+        }
+
+        .community-page .community-btn-outline:hover {
+            border-color: var(--community-blue);
+            background: rgba(41, 171, 226, 0.07);
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .community-page .community-hero {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            min-height: 570px;
+            padding: 78px 0;
+            background:
+                radial-gradient(circle at 85% 20%,
+                    rgba(41, 171, 226, 0.17), transparent 33%),
+                linear-gradient(135deg,
+                    #F7FAFF 0%, #FFFFFF 58%, #FFF9E8 100%);
+        }
+
+        .community-page .community-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -100px;
+            width: 340px;
+            height: 340px;
+            border: 1px solid rgba(41, 171, 226, 0.18);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 35px rgba(41, 171, 226, 0.035),
+                0 0 0 75px rgba(41, 171, 226, 0.025);
+            pointer-events: none;
+        }
+
+        .community-page .community-hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.02fr 0.98fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .community-page .community-hero-copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .community-page .community-hero h1 {
+            max-width: 650px;
+            margin: 0 0 22px;
+            font-size: clamp(2.8rem, 5.8vw, 5rem);
+            letter-spacing: -0.075em;
+            line-height: 1.02;
+        }
+
+        .community-page .community-hero h1 span {
+            color: var(--community-blue);
+        }
+
+        .community-page .community-hero-copy > p {
+            max-width: 530px;
+            margin: 0 0 28px;
+            color: #626875;
+            font-size: 1.04rem;
+        }
+
+        .community-page .community-hero-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            color: #555C66;
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+
+        .community-page .community-hero-note span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            color: var(--community-dark);
+            background: var(--community-yellow);
+        }
+
+        .community-page .community-hero-visual {
+            position: relative;
+            z-index: 2;
+            min-width: 0;
+        }
+
+        .community-page .community-hero-photo {
+            position: relative;
+            min-height: 410px;
+            overflow: hidden;
+            border-radius: 18px 18px 65px 18px;
+            background: linear-gradient(135deg, #DDEFF8, #F7FAFF);
+            box-shadow: 0 24px 65px rgba(27, 58, 78, 0.14);
+        }
+
+        .community-page .community-hero-photo img {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .community-page .community-photo-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: inherit;
+            padding: 35px;
+            color: #45616F;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .community-page .community-floating-card {
+            position: absolute;
+            z-index: 2;
+            right: -18px;
+            bottom: 25px;
+            max-width: 240px;
+            padding: 18px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 15px 35px rgba(26, 26, 26, 0.1);
+        }
+
+        .community-page .community-floating-card strong {
+            display: block;
+            margin-bottom: 5px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+        }
+
+        .community-page .community-floating-card p {
+            margin: 0;
+            color: #737780;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           ANIMATED LOVE — HERO BACKGROUND
+        ========================================= */
+
+        .community-page .community-love-animation {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .community-page .community-love {
+            position: absolute;
+            bottom: -60px;
+            color: var(--community-coral);
+            opacity: 0;
+            font-size: 25px;
+            filter: drop-shadow(
+                0 5px 12px rgba(232, 115, 90, 0.15)
+            );
+            animation: communityLoveFloat 10s ease-in infinite;
+        }
+
+        .community-page .community-love:nth-child(1) {
+            left: 7%;
+            animation-delay: 0s;
+            font-size: 21px;
+        }
+
+        .community-page .community-love:nth-child(2) {
+            left: 25%;
+            animation-delay: 3s;
+            font-size: 15px;
+            color: var(--community-yellow);
+        }
+
+        .community-page .community-love:nth-child(3) {
+            left: 48%;
+            animation-delay: 1.5s;
+            font-size: 27px;
+        }
+
+        .community-page .community-love:nth-child(4) {
+            left: 69%;
+            animation-delay: 4.5s;
+            font-size: 17px;
+            color: var(--community-yellow);
+        }
+
+        .community-page .community-love:nth-child(5) {
+            left: 88%;
+            animation-delay: 2s;
+            font-size: 23px;
+        }
+
+        @keyframes communityLoveFloat {
+            0% {
+                transform: translateY(0) rotate(-12deg) scale(0.75);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.45;
+            }
+
+            50% {
+                transform: translateY(-270px) rotate(12deg) scale(1);
+                opacity: 0.35;
+            }
+
+            85% {
+                opacity: 0.18;
+            }
+
+            100% {
+                transform: translateY(-560px) rotate(-8deg) scale(0.85);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+           PURPOSE STRIP
+        ========================================= */
+
+        .community-page .community-purpose {
+            padding: 23px 0;
+            color: #FFFFFF;
+            background: var(--community-dark);
+        }
+
+        .community-page .community-purpose-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .community-page .community-purpose p {
+            margin: 0;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 600;
+        }
+
+        .community-page .community-purpose span {
+            color: var(--community-yellow);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* =========================================
+           OUR HEART
+        ========================================= */
+
+        .community-page .community-heart-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .community-page .community-heart-image {
+            position: relative;
+            min-height: 365px;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #E8F4FA;
+        }
+
+        .community-page .community-heart-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .community-page .community-heart-copy h2 {
+            margin: 0 0 18px;
+            font-size: clamp(2rem, 3.8vw, 3rem);
+            letter-spacing: -0.06em;
+        }
+
+        .community-page .community-heart-copy > p {
+            margin: 0 0 16px;
+            color: #696E78;
+        }
+
+        .community-page .community-heart-verse {
+            margin-top: 25px;
+            padding: 17px 20px;
+            border-left: 4px solid var(--community-yellow);
+            border-radius: 0 8px 8px 0;
+            background: var(--community-soft);
+        }
+
+        .community-page .community-heart-verse strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .community-page .community-heart-verse p {
+            margin: 0;
+            color: #656A73;
+            font-size: 0.88rem;
+        }
+
+        /* =========================================
+           OUTREACH
+        ========================================= */
+
+        .community-page .community-outreach {
+            background: var(--community-soft);
+        }
+
+        .community-page .community-outreach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .community-page .community-outreach-card {
+            overflow: hidden;
+            border: 1px solid rgba(229, 229, 235, 0.9);
+            border-radius: 12px;
+            background: #FFFFFF;
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .community-page .community-outreach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(26, 26, 26, 0.07);
+        }
+
+        .community-page .community-card-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: #E8F4FA;
+        }
+
+        .community-page .community-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .community-page .community-outreach-card:hover .community-card-image img {
+            transform: scale(1.04);
+        }
+
+        .community-page .community-card-copy {
+            padding: 23px;
+        }
+
+        .community-page .community-card-copy h3 {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+            letter-spacing: -0.035em;
+        }
+
+        .community-page .community-card-copy p {
+            margin: 0;
+            color: #707580;
+            font-size: 0.9rem;
+        }
+
+        .community-page .community-small-label {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #1689BB;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           GET INVOLVED
+        ========================================= */
+
+        .community-page .community-involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 38px;
+        }
+
+        .community-page .community-involve-card {
+            padding: 27px 23px;
+            border: 1px solid var(--community-border);
+            border-radius: 12px;
+            background: #FFFFFF;
+            transition: border-color 0.25s ease,
+                        transform 0.25s ease;
+        }
+
+        .community-page .community-involve-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(41, 171, 226, 0.7);
+        }
+
+        .community-page .community-involve-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 47px;
+            height: 47px;
+            margin-bottom: 19px;
+            border-radius: 12px;
+            color: #087FAF;
+            background: #EAF7FD;
+            font-size: 1.35rem;
+        }
+
+        .community-page .community-involve-card:nth-child(2) .community-involve-icon {
+            color: #A36D00;
+            background: #FFF6D9;
+        }
+
+        .community-page .community-involve-card:nth-child(3) .community-involve-icon {
+            color: #BD5C47;
+            background: #FFF0EC;
+        }
+
+        .community-page .community-involve-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.18rem;
+        }
+
+        .community-page .community-involve-card p {
+            margin: 0 0 18px;
+            color: #737780;
+            font-size: 0.88rem;
+        }
+
+        .community-page .community-text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #087FAF;
+            font-size: 0.84rem;
+            font-weight: 800;
+        }
+
+        .community-page .community-text-link:hover {
+            color: var(--community-dark);
+        }
+
+        /* =========================================
+           COMMUNITY GALLERY
+        ========================================= */
+
+        .community-page .community-gallery {
+            padding-top: 35px;
+        }
+
+        .community-page .community-gallery-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr 1fr;
+            grid-template-rows: 220px 190px;
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .community-page .community-gallery-item {
+            position: relative;
+            min-width: 0;
+            overflow: hidden;
+            border-radius: 11px;
+            background: #E8F4FA;
+        }
+
+        .community-page .community-gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .community-page .community-gallery-item:last-child {
+            grid-column: span 2;
+        }
+
+        .community-page .community-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .community-page .community-gallery-item:hover img {
+            transform: scale(1.045);
+        }
+
+        .community-page .community-gallery-caption {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 32px 16px 15px;
+            color: #FFFFFF;
+            background: linear-gradient(
+                transparent,
+                rgba(0, 0, 0, 0.72)
+            );
+            font-size: 0.87rem;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           FINAL CTA
+        ========================================= */
+
+        .community-page .community-final-cta {
+            position: relative;
+            overflow: hidden;
+            padding: 70px 0;
+            color: #FFFFFF;
+            background:
+                radial-gradient(circle at 90% 0%,
+                    rgba(41, 171, 226, 0.35), transparent 34%),
+                var(--community-dark);
+        }
+
+        .community-page .community-final-cta::after {
+            content: "";
+            position: absolute;
+            right: -100px;
+            bottom: -180px;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(247, 195, 46, 0.28);
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(247, 195, 46, 0.035);
+            pointer-events: none;
+        }
+
+        .community-page .community-final-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .community-page .community-final-cta h2 {
+            max-width: 650px;
+            margin: 0 0 14px;
+            color: #FFFFFF;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            letter-spacing: -0.06em;
+        }
+
+        .community-page .community-final-cta p {
+            max-width: 600px;
+            margin: 0;
+            color: #CFD3DB;
+        }
+
+        .community-page .community-final-cta .community-btn {
+            flex-shrink: 0;
+        }
+
+        /* =========================================
+           REVEAL ANIMATIONS
+        ========================================= */
+
+        .community-page .community-reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.65s ease,
+                        transform 0.65s ease;
+        }
+
+        .community-page .community-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+            .community-page .community-hero-grid {
+                grid-template-columns: 1fr 0.9fr;
+                gap: 28px;
+            }
+
+            .community-page .community-hero h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+
+            .community-page .community-hero-photo {
+                min-height: 340px;
+            }
+
+            .community-page .community-heart-grid {
+                gap: 35px;
+            }
+
+            .community-page .community-outreach-grid,
+            .community-page .community-involvement-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .community-page .community-final-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .community-page .community-container {
+                width: min(calc(100% - 32px), 1160px);
+            }
+
+            .community-page .community-section {
+                padding: 54px 0;
+            }
+
+            .community-page .community-hero {
+                min-height: unset;
+                padding: 56px 0 46px;
+            }
+
+            .community-page .community-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .community-page .community-hero h1 {
+                font-size: clamp(2.65rem, 12vw, 4rem);
+            }
+
+            .community-page .community-hero-copy > p {
+                font-size: 0.96rem;
+            }
+
+            .community-page .community-hero-photo {
+                min-height: 300px;
+                border-radius: 14px 14px 42px 14px;
+            }
+
+            .community-page .community-floating-card {
+                right: 10px;
+                bottom: 12px;
+                max-width: 210px;
+                padding: 14px 16px;
+            }
+
+            .community-page .community-purpose-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 7px;
+            }
+
+            .community-page .community-heart-grid {
+                grid-template-columns: 1fr;
+                gap: 27px;
+            }
+
+            .community-page .community-heart-image {
+                min-height: 285px;
+            }
+
+            .community-page .community-outreach-grid,
+            .community-page .community-involvement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .community-page .community-card-image {
+                height: 225px;
+            }
+
+            .community-page .community-gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 240px 170px 170px;
+                gap: 10px;
+            }
+
+            .community-page .community-gallery-item:first-child {
+                grid-row: auto;
+                grid-column: span 2;
+            }
+
+            .community-page .community-gallery-item:last-child {
+                grid-column: span 2;
+            }
+
+            .community-page .community-final-cta {
+                padding: 55px 0;
+            }
+
+            .community-page .community-final-inner {
+                gap: 25px;
+            }
+
+            .community-page .community-btn {
+                width: 100%;
+            }
+
+            .community-page .community-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .community-page .community-love {
+                display: none;
+                animation: none;
+            }
+
+            .community-page .community-reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .community-page *,
+            .community-page *::before,
+            .community-page *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- SHARED HEADER -->
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+            <img class="brand-logo"
+                 src="../assets/images/logos/rafiki-logo.jpeg"
+                 alt="Rafiki Zespół logo">
+            <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+        </a>
+
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="ministry.html">Ministry</a>
+            <a href="music.html">Sound &amp; Media</a>
+            <a href="events.html">Events</a>
+            <a href="community.html" aria-current="page">Community</a>
+            <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+        </div>
+    </nav>
+</header>
+
+<main class="community-page">
+
+    <!-- HERO WITH FLOATING LOVE ANIMATION -->
+    <section class="community-hero">
+
+        <div class="community-love-animation" aria-hidden="true">
+            <span class="community-love">♥</span>
+            <span class="community-love">✦</span>
+            <span class="community-love">♡</span>
+            <span class="community-love">✦</span>
+            <span class="community-love">♥</span>
+        </div>
+
+        <div class="community-container community-hero-grid">
+
+            <div class="community-hero-copy community-reveal">
+                <span class="community-eyebrow">The Rafiki Community</span>
+
+                <h1>
+                    More Than Music.<br>
+                    <span>A Community With Purpose.</span>
+                </h1>
+
+                <p>
+                    We believe that worship extends beyond the stage.
+                    Through faith, friendship, service, and love, we seek
+                    to serve God's purpose in our generation.
+                </p>
+
+                <div class="community-actions">
+                    <a class="community-btn community-btn-primary"
+                       href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3l%2C%20I%27d%20love%20to%20connect%20with%20your%20community%20and%20learn%20how%20I%20can%20get%20involved."
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Be Part of the Community <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a class="community-btn community-btn-outline"
+                       href="#community-outreach">
+                        Explore Our Outreach
+                    </a>
+                </div>
+
+                <div class="community-hero-note">
+                    <span aria-hidden="true">♥</span>
+                    Faith. Fellowship. Service. Purpose.
+                </div>
+            </div>
+
+            <div class="community-hero-visual community-reveal">
+                <div class="community-hero-photo">
+                    <img src="../assets/images/community/community-hero.jpg"
+                         alt="Rafiki Zespół members and friends sharing a moment of fellowship"
+                         onerror="this.style.display='none'">
+
+                    <div class="community-photo-placeholder">
+                        Add your community or fellowship photograph here.
+                    </div>
+                </div>
+
+                <div class="community-floating-card">
+                    <strong>One community. One purpose.</strong>
+                    <p>Growing in faith, serving with love, and making a difference together.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PURPOSE STRIP -->
+    <section class="community-purpose" aria-label="Our purpose">
+        <div class="community-container community-purpose-inner">
+            <p>Where Music Meets Purpose.</p>
+            <span>BEYOND THE STAGE, INTO THE COMMUNITY.</span>
+        </div>
+    </section>
+
+    <!-- OUR HEART -->
+    <section class="community-section">
+        <div class="community-container community-heart-grid">
+
+            <div class="community-heart-image community-reveal">
+                <img src="../assets/images/community/community-fellowship.jpg"
+                     alt="Members of the community connecting and supporting one another"
+                     loading="lazy"
+                     onerror="this.style.display='none'">
+
+                <div class="community-photo-placeholder">
+                    Add a genuine fellowship, prayer, or community photograph here.
+                </div>
+            </div>
+
+            <div class="community-heart-copy community-reveal">
+                <span class="community-eyebrow">Our Heart</span>
+
+                <h2>Faith That Connects Us. Love That Moves Us.</h2>
+
+                <p>
+                    Rafiki Zespół is more than a music team. We are a
+                    community brought together by faith, a shared love
+                    for worship, and a desire to make our gifts count
+                    for something greater than ourselves.
+                </p>
+
+                <p>
+                    We value genuine relationships, encouraging one
+                    another, serving people, and creating opportunities
+                    for our faith to be expressed through practical acts
+                    of love.
+                </p>
+
+                <div class="community-heart-verse">
+                    <strong>Our guiding Scripture — Acts 13:36</strong>
+                    <p>
+                        A reminder of David serving God's purpose in his
+                        own generation, inspiring our commitment to serve
+                        faithfully in ours.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUTREACH -->
+    <section class="community-section community-outreach"
+             id="community-outreach">
+        <div class="community-container">
+
+            <div class="community-center community-reveal">
+                <span class="community-eyebrow">Love in Action</span>
+
+                <h2 class="community-heading">
+                    Taking Purpose Beyond the Stage
+                </h2>
+
+                <p class="community-intro">
+                    Our heart for ministry reaches beyond music.
+                    We want to encourage people, serve our communities,
+                    and use what we have to make a meaningful difference.
+                </p>
+            </div>
+
+            <div class="community-outreach-grid">
+
+                <article class="community-outreach-card community-reveal">
+                    <div class="community-card-image">
+                        <img src="../assets/images/community/outreach-service.jpg"
+                             alt="Community outreach and practical acts of service"
+                             loading="lazy">
+                    </div>
+
+                    <div class="community-card-copy">
+                        <span class="community-small-label">Serve</span>
+                        <h3>Outreach &amp; Compassion</h3>
+                        <p>
+                            Discover opportunities to serve, support
+                            people in need, and participate in practical
+                            acts of kindness as outreach initiatives develop.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="community-outreach-card community-reveal">
+                    <div class="community-card-image">
+                        <img src="../assets/images/community/community-worship.jpg"
+                             alt="People gathering for worship, prayer, and encouragement"
+                             loading="lazy">
+                    </div>
+
+                    <div class="community-card-copy">
+                        <span class="community-small-label">Encourage</span>
+                        <h3>Faith &amp; Fellowship</h3>
+                        <p>
+                            Create room for meaningful connections,
+                            shared encouragement, prayer, and a deeper
+                            commitment to living out our faith.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="community-outreach-card community-reveal">
+                    <div class="community-card-image">
+                        <img src="../assets/images/community/community-creativity.jpg"
+                             alt="Creative team members working together on ministry activities"
+                             loading="lazy">
+                    </div>
+
+                    <div class="community-card-copy">
+                        <span class="community-small-label">Contribute</span>
+                        <h3>Gifts With Purpose</h3>
+                        <p>
+                            Bring your creativity, professional skills,
+                            time, or resources to help strengthen the
+                            work of the ministry and its community.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GET INVOLVED -->
+    <section class="community-section" id="get-involved">
+        <div class="community-container">
+
+            <div class="community-center community-reveal">
+                <span class="community-eyebrow">Your Place in the Story</span>
+
+                <h2 class="community-heading">
+                    There Is a Place for You Here
+                </h2>
+
+                <p class="community-intro">
+                    You do not have to be a musician to be part of
+                    what we do. Your time, gifts, ideas, and willingness
+                    to serve can make a difference.
+                </p>
+            </div>
+
+            <div class="community-involvement-grid">
+
+                <article class="community-involve-card community-reveal">
+                    <div class="community-involve-icon" aria-hidden="true">♡</div>
+                    <h3>Volunteer</h3>
+                    <p>
+                        Help with outreach, event preparation,
+                        hospitality, coordination, and other ministry
+                        activities as opportunities arise.
+                    </p>
+
+                    <a class="community-text-link community-whatsapp"
+                       href="https://wa.me/254798562612"
+                       data-message="Hello Rafiki Zespół, I am interested in volunteering. Please let me know about available opportunities.">
+                        Enquire about volunteering <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                <article class="community-involve-card community-reveal">
+                    <div class="community-involve-icon" aria-hidden="true">✦</div>
+                    <h3>Share Your Skills</h3>
+                    <p>
+                        Contribute in areas such as media, photography,
+                        design, technology, communications, organisation,
+                        or other professional skills.
+                    </p>
+
+                    <a class="community-text-link community-whatsapp"
+                       href="https://wa.me/254798562612"
+                       data-message="Hello Rafiki Zespół, I would love to contribute my skills to your ministry. Please let me know how I can help.">
+                        Offer your skills <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                <article class="community-involve-card community-reveal">
+                    <div class="community-involve-icon" aria-hidden="true">♡</div>
+                    <h3>Partner With Us</h3>
+                    <p>
+                        Explore ways to support outreach initiatives
+                        and ministry projects through collaboration,
+                        resources, or other forms of partnership.
+                    </p>
+
+                    <a class="community-text-link community-whatsapp"
+                       href="https://wa.me/254798562612"
+                       data-message="Hello Rafiki Zespół, I am interested in partnering with your ministry and supporting your community initiatives. Could we discuss the available opportunities?">
+                        Discuss partnership <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY GALLERY -->
+    <section class="community-section community-gallery"
+             id="community-stories">
+        <div class="community-container">
+
+            <div class="community-center community-reveal">
+                <span class="community-eyebrow">Moments That Matter</span>
+
+                <h2 class="community-heading">
+                    Our Community, Through the Moments We Share
+                </h2>
+
+                <p class="community-intro">
+                    Every gathering, act of service, and shared moment
+                    tells part of the story. Here, we will showcase
+                    genuine moments from the Rafiki community.
+                </p>
+            </div>
+
+            <div class="community-gallery-grid">
+
+                <div class="community-gallery-item community-reveal">
+                    <img src="../assets/images/community/gallery-fellowship.jpg"
+                         alt="Rafiki community fellowship"
+                         loading="lazy">
+                    <div class="community-gallery-caption">Together in fellowship</div>
+                </div>
+
+                <div class="community-gallery-item community-reveal">
+                    <img src="../assets/images/community/gallery-worship.jpg"
+                         alt="Community worship moment"
+                         loading="lazy">
+                    <div class="community-gallery-caption">A shared heart for worship</div>
+                </div>
+
+                <div class="community-gallery-item community-reveal">
+                    <img src="../assets/images/community/gallery-service.jpg"
+                         alt="Community service activity"
+                         loading="lazy">
+                    <div class="community-gallery-caption">Serving with love</div>
+                </div>
+
+                <div class="community-gallery-item community-reveal">
+                    <img src="../assets/images/community/gallery-team.jpg"
+                         alt="Rafiki Zespół team and community"
+                         loading="lazy">
+                    <div class="community-gallery-caption">One community, many gifts</div>
+                </div>
+
+            </div>
+
+            <div class="community-center community-reveal"
+                 style="margin-top: 30px;">
+                <a class="community-btn community-btn-outline"
+                   href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3l%2C%20I%27d%20love%20to%20learn%20more%20about%20your%20community%20activities."
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ask About Our Activities <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="community-final-cta">
+        <div class="community-container community-final-inner">
+
+            <div class="community-reveal">
+                <span class="community-eyebrow">Let's Make a Difference</span>
+
+                <h2>Your Gifts. His Purpose. Our Generation.</h2>
+
+                <p>
+                    Whether you want to volunteer, share a skill,
+                    explore a partnership, or simply learn more about
+                    our community, we would love to hear from you.
+                </p>
+            </div>
+
+            <div class="community-actions community-reveal">
+                <a class="community-btn community-btn-yellow"
+                   href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3l%2C%20I%27d%20like%20to%20get%20involved%20in%20your%20community%20and%20outreach%20activities."
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Connect With Rafiki <span aria-hidden="true">↗</span>
+                </a>
+
+                <a class="community-btn community-btn-outline community-support-link"
+                   href="support.html">
+                    Support the Vision
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- SHARED FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a class="brand" href="../index.html">
+                    <img class="brand-logo"
+                         src="../assets/images/logos/rafiki-logo.jpeg"
+                         alt="Rafiki Zespół logo">
+                    <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                </a>
+
+                <p>
+                    Where Music Meets Purpose. Serving God's purpose
+                    in our generation through music and worship.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Discover</h4>
+                <a href="about.html">About Rafiki</a>
+                <a href="vision.html">Our Vision</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="journey.html">Our Journey</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Our Ministry</h4>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Get Involved</h4>
+                <a href="invite.html">Invite Rafiki</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="partner.html">Partner With Us</a>
+                <a href="support.html">Support the Vision</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p>© <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- EXISTING SHARED JAVASCRIPT -->
+<script src="../assets/js/main.js"></script>
+
+<!-- COMMUNITY PAGE INTERACTIONS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* Prefilled WhatsApp enquiries */
+    document.querySelectorAll(
+        ".community-page .community-whatsapp"
+    ).forEach(function (link) {
+        const message = link.dataset.message || "";
+
+        link.href =
+            "https://wa.me/254798562612?text=" +
+            encodeURIComponent(message);
+
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
+
+    /* Scroll reveal animations */
+    const revealElements = document.querySelectorAll(
+        ".community-page .community-reveal"
+    );
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealElements.forEach(function (element) {
+            element.classList.add("is-visible");
+        });
+    } else {
+        const observer = new IntersectionObserver(
+            function (entries, currentObserver) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        currentObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -25px 0px"
+            }
+        );
+
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+    }
+
+    /* Keep missing image areas visually clean */
+    document.querySelectorAll(
+        ".community-page img"
+    ).forEach(function (photo) {
+
+        const placeholder = photo.parentElement.querySelector(
+            ".community-photo-placeholder"
+        );
+
+        function hidePlaceholder() {
+            if (placeholder) {
+                placeholder.style.display = "none";
+            }
+        }
+
+        function showPlaceholder() {
+            if (placeholder) {
+                placeholder.style.display = "flex";
+            }
+        }
+
+        if (photo.complete) {
+            if (photo.naturalWidth > 0) {
+                hidePlaceholder();
+            } else {
+                showPlaceholder();
+            }
+        } else {
+            photo.addEventListener("load", hidePlaceholder, {
+                once: true
+            });
+
+            photo.addEventListener("error", showPlaceholder, {
+                once: true
+            });
+        }
+    });
+
+    /* Make missing gallery images show a simple fallback */
+    document.querySelectorAll(
+        ".community-page .community-gallery-item img, " +
+        ".community-page .community-card-image img"
+    ).forEach(function (photo) {
+        photo.addEventListener("error", function () {
+            photo.style.display = "none";
+            photo.parentElement.style.background =
+                "linear-gradient(135deg, #EAF7FD, #FFF6D9)";
+        }, { once: true });
+    });
+
+});
+</script>
+
+</body>
+</html>

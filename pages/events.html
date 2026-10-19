@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | Rafiki Zespół</title>
+    <meta name="description" content="Discover upcoming worship gatherings and past events from Rafiki Zespół. Join us as we serve God's purpose through music and worship.">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* EVENTS PAGE */
+        .events-page {
+            background: #f7faff;
+            color: #1a1a1a;
+            overflow: visible;
+        }
+
+        .events-hero {
+            padding: 90px 20px 75px;
+            text-align: center;
+            background: linear-gradient(135deg, #111722, #17364c);
+            color: #ffffff;
+        }
+
+        .events-hero .eyebrow {
+            color: #29abe2;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .events-hero h1 {
+            margin: 15px 0;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.1;
+            color: #ffffff;
+        }
+
+        .events-hero h1 span {
+            color: #29abe2;
+        }
+
+        .events-hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #e0e8ef;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .events-section {
+            padding: 75px 20px;
+        }
+
+        .events-section-heading {
+            margin-bottom: 35px;
+        }
+
+        .events-section-heading .eyebrow {
+            color: #168dc3;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        .events-section-heading h2 {
+            margin: 10px 0;
+            font-size: clamp(28px, 4vw, 42px);
+            color: #1a1a1a;
+        }
+
+        .events-section-heading p {
+            max-width: 650px;
+            color: #666e78;
+            line-height: 1.8;
+        }
+
+        .event-card {
+            display: grid;
+            grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+            gap: 38px;
+            align-items: center;
+            padding: 28px;
+            margin-bottom: 35px;
+            background: #ffffff;
+            border: 1px solid #e5e5eb;
+            border-radius: 22px;
+            box-shadow: 0 12px 35px rgba(17, 23, 34, 0.06);
+        }
+
+        .event-poster-wrap {
+            display: block !important;
+            width: 100%;
+            min-width: 0;
+            height: auto !important;
+            min-height: 0;
+            overflow: visible !important;
+            position: relative;
+            background: #edf3f8;
+            border-radius: 14px;
+        }
+
+        .event-poster {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 2;
+            width: 100% !important;
+            max-width: 100%;
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+            object-fit: contain !important;
+            object-position: center;
+            margin: 0 auto;
+            border-radius: 14px;
+            background: #edf3f8;
+        }
+
+        .event-status {
+            display: inline-block;
+            padding: 8px 13px;
+            margin-bottom: 15px;
+            border-radius: 30px;
+            background: #e5f6fd;
+            color: #0879a9;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .event-status.past {
+            background: #f0f0f3;
+            color: #686875;
+        }
+
+        .event-details h3 {
+            margin: 0 0 12px;
+            font-size: clamp(27px, 3vw, 38px);
+            line-height: 1.2;
+            color: #172333;
+        }
+
+        .event-theme {
+            color: #168dc3;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .event-details p {
+            color: #626b76;
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        .event-meta {
+            padding: 15px 0;
+            margin: 18px 0;
+            border-top: 1px solid #e5e5eb;
+            border-bottom: 1px solid #e5e5eb;
+        }
+
+        .event-meta p {
+            margin: 7px 0;
+            color: #333d49;
+            font-size: 14px;
+        }
+
+        .event-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .event-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 13px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .event-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .event-button.primary {
+            background: #29abe2;
+            color: #ffffff;
+        }
+
+        .event-button.secondary {
+            border: 1px solid #d8e0e8;
+            color: #172333;
+            background: #ffffff;
+        }
+
+        .events-cta {
+            padding: 70px 20px;
+            text-align: center;
+            background: #111722;
+            color: #ffffff;
+        }
+
+        .events-cta h2 {
+            margin: 0 0 15px;
+            color: #ffffff;
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .events-cta p {
+            max-width: 620px;
+            margin: 0 auto 25px;
+            color: #d5dde6;
+            line-height: 1.8;
+        }
+
+        .poster-note {
+            color: #7b8490;
+            font-size: 12px;
+            margin-top: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 800px) {
+            .events-hero {
+                padding: 65px 20px 55px;
+            }
+
+            .events-section {
+                padding: 50px 16px;
+            }
+
+            .event-card {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 18px;
+            }
+
+            .event-poster-wrap {
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
+            .event-details {
+                padding: 0 3px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body class="events-page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+                <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+            </a>
+
+            <button class="menu-toggle" type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="main-menu">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a class="active" href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="events-hero">
+            <div class="container">
+                <span class="eyebrow">Gather. Worship. Encounter.</span>
+                <h1>Moments That <span>Move Generations.</span></h1>
+                <p>
+                    From worship gatherings to community encounters, we create
+                    spaces where people meet God, discover purpose and grow
+                    together through music and worship.
+                </p>
+            </div>
+        </section>
+
+        <!-- UPCOMING EVENT -->
+        <section class="events-section" id="upcoming-events">
+            <div class="container">
+
+                <div class="events-section-heading">
+                    <span class="eyebrow">Mark Your Calendar</span>
+                    <h2>Upcoming Event</h2>
+                    <p>
+                        Be part of what God is doing through Rafiki Zespół.
+                        Come ready for worship, fellowship and a fresh encounter.
+                    </p>
+                </div>
+
+                <article class="event-card">
+
+                    <div class="event-poster-wrap">
+                        <img
+                            class="event-poster"
+                            src="../assets/images/events/Awaken1.jpg"
+                            alt="AWAKEN Season 1 event poster"
+                            loading="eager"
+                            onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:45px 20px;text-align:center;color:#172333;&quot;><strong>AWAKEN — Season 1</strong><p>Poster could not load. Check the image filename and location.</p></div>';"
+                        >
+                    </div>
+
+                    <div class="event-details">
+                        <span class="event-status">Upcoming Event</span>
+                        <h3>AWAKEN — Season 1</h3>
+                        <div class="event-theme">
+                            From Generation to Generation
+                        </div>
+
+                        <p>
+                            A worship movement bringing generations together
+                            to celebrate God's faithfulness, awaken hearts
+                            and pass the fire of faith from one generation
+                            to the next.
+                        </p>
+
+                        <p>
+                            Anchored in Psalm 145:4, AWAKEN is an invitation
+                            to worship, encounter God and declare His greatness
+                            across generations.
+                        </p>
+
+                        <div class="event-meta">
+                            <p><strong>Date:</strong> 29 November 2026</p>
+                            <p><strong>Hosted by:</strong> Rafiki Zespół</p>
+                            <p><strong>Theme Scripture:</strong> Psalm 145:4</p>
+                        </div>
+
+                        <div class="event-actions">
+                            <a
+                                class="event-button primary"
+                                href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3%C5%82%2C%20I%27d%20like%20to%20know%20more%20about%20AWAKEN%20Season%201."
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Enquire About AWAKEN ↗
+                            </a>
+
+                            <a class="event-button secondary" href="contact.html">
+                                Contact Us
+                            </a>
+                        </div>
+
+                        <div class="poster-note">
+                            Event details may be updated as preparations progress.
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        </section>
+
+        <!-- PAST EVENTS -->
+        <section class="events-section" id="past-events">
+            <div class="container">
+
+                <div class="events-section-heading">
+                    <span class="eyebrow">Our Journey So Far</span>
+                    <h2>Past Gatherings</h2>
+                    <p>
+                        Every gathering is part of a bigger story of faith,
+                        worship and purpose.
+                    </p>
+                </div>
+
+                <article class="event-card">
+
+                    <div class="event-poster-wrap">
+                        <img
+                            class="event-poster"
+                            src="../assets/images/events/Racham.jpg"
+                            alt="RACHAM Season 1 event poster"
+                            loading="eager"
+                            onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:45px 20px;text-align:center;color:#172333;&quot;><strong>RACHAM — Season 1</strong><p>Poster could not load. Check the image filename and location.</p></div>';"
+                        >
+                    </div>
+
+                    <div class="event-details">
+                        <span class="event-status past">Past Event</span>
+                        <h3>RACHAM — Season 1</h3>
+                        <div class="event-theme">The First Love</div>
+
+                        <p>
+                            RACHAM is a worship gathering birthed by Rafiki
+                            Zespół, centred on returning to our first love
+                            for Christ and rediscovering the heart of
+                            authentic worship.
+                        </p>
+
+                        <p>
+                            It reflects our desire to create meaningful
+                            encounters that draw people closer to God
+                            through music, prayer and fellowship.
+                        </p>
+
+                        <div class="event-meta">
+                            <p><strong>Event:</strong> RACHAM — Season 1</p>
+                            <p><strong>Theme:</strong> The First Love</p>
+                            <p><strong>Hosted by:</strong> Rafiki Zespół</p>
+                        </div>
+
+                        <div class="event-actions">
+                            <a class="event-button primary" href="gallery.html">
+                                Explore Our Gallery ↗
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="events-cta">
+            <div class="container">
+                <h2>Let's Create Something Meaningful.</h2>
+                <p>
+                    Planning a worship service, church celebration, youth
+                    gathering or special event? We'd love to hear from you.
+                </p>
+                <div class="event-actions" style="justify-content:center;">
+                    <a class="event-button primary" href="invite.html">
+                        Invite Rafiki ↗
+                    </a>
+                    <a class="event-button secondary" href="contact.html">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a class="brand" href="../index.html">
+                        <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                        <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                    </a>
+                    <p>
+                        Where Music Meets Purpose. Serving God's purpose
+                        in our generation through music and worship.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Discover</h4>
+                    <a href="about.html">About Rafiki</a>
+                    <a href="vision.html">Our Vision</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="journey.html">Our Journey</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Ministry</h4>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="community.html">Community</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <a href="invite.html">Invite Rafiki</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="partner.html">Partner With Us</a>
+                    <a href="support.html">Support the Vision</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>© <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
