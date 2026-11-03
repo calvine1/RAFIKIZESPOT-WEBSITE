@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Rafiki Zespół for worship invitations, ministry partnerships, music, and enquiries. Where Music Meets Purpose.">
+    <title>Contact Us | Rafiki Zespół</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* CONTACT HERO */
+        .contact-hero {
+            padding: 90px 0 55px;
+            text-align: center;
+            background: linear-gradient(135deg, #f7faff, #eaf7ff);
+        }
+
+        .contact-hero .eyebrow {
+            color: #168fc5;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            margin: 15px 0;
+            line-height: 1.1;
+        }
+
+        .contact-hero h1 span {
+            color: #29abe2;
+        }
+
+        .contact-hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* CONTACT CHANNELS */
+        .contact-section {
+            padding: 65px 0;
+        }
+
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .contact-heading h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 10px;
+        }
+
+        .contact-heading p {
+            color: #777;
+            line-height: 1.7;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e5e5eb;
+            border-radius: 18px;
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(20, 40, 70, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            min-width: 0;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(20, 40, 70, 0.1);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 18px;
+            background: #eaf7ff;
+            color: #168fc5;
+        }
+
+        .contact-icon svg {
+            width: 29px;
+            height: 29px;
+        }
+
+        .contact-icon.whatsapp {
+            background: #e6f8ed;
+            color: #20a45b;
+        }
+
+        .contact-icon.youtube {
+            background: #fff0f0;
+            color: #e62117;
+        }
+
+        .contact-icon.tiktok {
+            background: #f0f0f4;
+            color: #111722;
+        }
+
+        .contact-icon.instagram {
+            background: #fff0f7;
+            color: #c13584;
+        }
+
+        .contact-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.15rem;
+        }
+
+        .contact-card p {
+            color: #777;
+            line-height: 1.65;
+            margin-bottom: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a {
+            color: #168fc5;
+            font-weight: 700;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTACT FORM */
+        .contact-form-section {
+            background: #f7faff;
+            padding: 70px 0;
+        }
+
+        .contact-form-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #e5e5eb;
+            border-radius: 22px;
+            padding: clamp(22px, 5vw, 42px);
+            box-shadow: 0 10px 35px rgba(20, 40, 70, 0.06);
+        }
+
+        .contact-form-wrap h2 {
+            margin-top: 0;
+            font-size: clamp(1.7rem, 4vw, 2.3rem);
+        }
+
+        .contact-form-wrap > p {
+            color: #777;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #dfe3ea;
+            border-radius: 10px;
+            background: #fff;
+            color: #1a1a1a;
+            font: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: 2px solid rgba(41, 171, 226, 0.25);
+            border-color: #29abe2;
+        }
+
+        .form-group textarea {
+            min-height: 145px;
+            resize: vertical;
+        }
+
+        .contact-submit {
+            grid-column: 1 / -1;
+            border: none;
+            border-radius: 10px;
+            background: #29abe2;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            padding: 15px 22px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .contact-submit:hover {
+            background: #168fc5;
+            transform: translateY(-2px);
+        }
+
+        .contact-note {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        /* CLOSING CTA */
+        .contact-cta {
+            padding: 65px 20px;
+            text-align: center;
+            background: #111722;
+            color: #fff;
+        }
+
+        .contact-cta h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin: 0 0 14px;
+        }
+
+        .contact-cta p {
+            max-width: 620px;
+            margin: 0 auto 25px;
+            color: #d4d8df;
+            line-height: 1.8;
+        }
+
+        .contact-cta a {
+            display: inline-block;
+            background: #29abe2;
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .contact-cta a:hover {
+            background: #168fc5;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 850px) {
+            .contact-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .contact-hero {
+                padding: 65px 0 42px;
+            }
+
+            .contact-section {
+                padding: 45px 0;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width,
+            .contact-submit {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED WEBSITE HEADER -->
+    <header class="site-header" id="site-header">
+        <nav class="navbar container">
+
+            <a class="brand" href="../index.html" aria-label="Rafiki Zespół Home">
+                <img
+                    class="brand-logo"
+                    src="../assets/images/logos/rafiki-logo.jpeg"
+                    alt="Rafiki Zespół logo"
+                >
+                <span class="brand-name">RAFIKI <strong>ZESPÓŁ</strong></span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="music.html">Music</a>
+                <a href="events.html">Events</a>
+                <a href="ministry.html">Ministry</a>
+                <a href="community.html">Community</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+                <a href="invite.html" class="nav-cta">Invite Rafiki</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="contact-hero">
+            <div class="container">
+                <span class="eyebrow">Let's Connect</span>
+                <h1>Let's start a <span>conversation.</span></h1>
+                <p>
+                    Have an event, a ministry idea, a partnership opportunity,
+                    or simply want to connect with Rafiki Zespół? We'd love
+                    to hear from you.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT CHANNELS -->
+        <section class="contact-section">
+            <div class="container">
+
+                <div class="contact-heading">
+                    <h2>Connect With Rafiki</h2>
+                    <p>Choose the channel that works best for you.</p>
+                </div>
+
+                <div class="contact-cards">
+
+                    <!-- WHATSAPP -->
+                    <article class="contact-card reveal">
+                        <div class="contact-icon whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M20.52 3.48A11.82 11.82 0 0 0 12.09 0C5.52 0 .18 5.34.18 11.91c0 2.1.55 4.15 1.59 5.96L0 24l6.28-1.65a11.9 11.9 0 0 0 5.8 1.48h.01C18.66 23.83 24 18.49 24 11.92a11.82 11.82 0 0 0-3.48-8.44ZM12.09 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98.99-3.64-.24-.37a9.87 9.87 0 0 1-1.52-5.27c0-5.47 4.45-9.92 9.92-9.92a9.85 9.85 0 0 1 7.02 2.91 9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.94 9.92Zm5.44-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+                            </svg>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>For quick enquiries, event bookings, and direct communication.</p>
+                        <a
+                            href="https://wa.me/254798562612"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Chat with Rafiki Zespół on WhatsApp at +254 798 562 612"
+                        >+254 798 562 612</a>
+                    </article>
+
+                    <!-- EMAIL -->
+                    <article class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>For formal enquiries, invitations, and partnership proposals.</p>
+                        <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a>
+                    </article>
+
+                    <!-- YOUTUBE -->
+                    <article class="contact-card reveal">
+                        <div class="contact-icon youtube">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+                            </svg>
+                        </div>
+                        <h3>YouTube</h3>
+                        <p>Watch our worship moments, music, and ministry content.</p>
+                        <a href="https://youtube.com/@rafikizespol?si=e2uoLc1MnpXv__FL"
+                           target="_blank" rel="noopener noreferrer">Visit Our Channel</a>
+                    </article>
+
+                    <!-- TIKTOK -->
+                    <article class="contact-card reveal">
+                        <div class="contact-icon tiktok">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.1V2h-3.4v13.67a2.89 2.89 0 0 1-2.9 2.75 2.9 2.9 0 1 1 1.15-5.56v-3.5a6.4 6.4 0 1 0 5.15 6.26V8.65a8.2 8.2 0 0 0 4.8 1.54V6.8a4.8 4.8 0 0 1-1.03-.11Z"/>
+                            </svg>
+                        </div>
+                        <h3>TikTok</h3>
+                        <p>Catch short clips, behind-the-scenes moments, and updates.</p>
+                        <a href="https://www.tiktok.com/@rafiki.zesp?_r=1&_t=ZS-9AaOQN1bnBV"
+                           target="_blank" rel="noopener noreferrer">Follow Rafiki</a>
+                    </article>
+
+                    <!-- INSTAGRAM -->
+                    <article class="contact-card reveal">
+                        <div class="contact-icon instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>Follow our journey, ministry highlights, and community updates.</p>
+                        <a href="https://www.instagram.com/rafiki_zespol?exln=c3A2OGx5dW9tbmxt"
+                           target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-form-wrap">
+                    <h2>Send Us an Enquiry</h2>
+                    <p>
+                        Tell us a little about what you have in mind.
+                        Submitting this form will open WhatsApp with your
+                        message ready to send.
+                    </p>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" name="name"
+                                   placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email"
+                                   placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="contactTopic">What would you like to discuss? *</label>
+                            <select id="contactTopic" name="topic" required>
+                                <option value="">Choose a topic</option>
+                                <option value="Event invitation">Event invitation</option>
+                                <option value="Music and worship">Music and worship</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Volunteering">Volunteering</option>
+                                <option value="Community outreach">Community outreach</option>
+                                <option value="General enquiry">General enquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="contactMessage">Your Message *</label>
+                            <textarea id="contactMessage" name="message"
+                                      placeholder="Tell us how we can connect..."
+                                      required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit">
+                            Send Enquiry via WhatsApp
+                        </button>
+                    </form>
+
+                    <p class="contact-note">
+                        This form opens WhatsApp with your enquiry prepared.
+                        It does not store your details on this website.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING CTA -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2>Let's Make an Impact Together</h2>
+                <p>
+                    Every connection is an opportunity to serve, worship,
+                    encourage, and make a difference in our generation.
+                </p>
+                <a href="invite.html">Invite Rafiki Zespół</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SHARED FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a class="brand" href="../index.html">
+                        <img class="brand-logo"
+                             src="../assets/images/logos/rafiki-logo.jpeg"
+                             alt="Rafiki Zespół logo">
+                        <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                    </a>
+                    <p>
+                        Where Music Meets Purpose. Serving God's purpose
+                        in our generation through music and worship.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Discover</h4>
+                    <a href="about.html">About Rafiki</a>
+                    <a href="vision.html">Our Vision</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="journey.html">Our Journey</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Ministry</h4>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="community.html">Community</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <a href="invite.html">Invite Rafiki</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="partner.html">Partner With Us</a>
+                    <a href="support.html">Support the Vision</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>© <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactForm = document.getElementById("contactForm");
+
+            if (!contactForm) return;
+
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("contactName").value.trim();
+                const email = document.getElementById("contactEmail").value.trim();
+                const topic = document.getElementById("contactTopic").value;
+                const message = document.getElementById("contactMessage").value.trim();
+
+                const whatsappMessage =
+                    "Hello Rafiki Zespół,\n\n" +
+                    "I am " + name + ".\n" +
+                    "Email: " + email + "\n" +
+                    "Enquiry: " + topic + "\n\n" +
+                    "Message:\n" + message;
+
+                const whatsappURL =
+                    "https://wa.me/254798562612?text=" +
+                    encodeURIComponent(whatsappMessage);
+
+                window.open(whatsappURL, "_blank", "noopener,noreferrer");
+            });
+        });
+    </script>
+
+</body>
+</html>

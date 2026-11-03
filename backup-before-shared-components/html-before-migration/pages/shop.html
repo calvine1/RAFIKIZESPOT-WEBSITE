@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop Rafiki Zespół merchandise and music-related items. Every purchase helps support our ministry, worship and community outreach.">
+    <meta name="theme-color" content="#1A1A1A">
+
+    <title>Rafiki Shop | Support the Vision</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <style>
+        :root {
+            --shop-blue: #29ABE2;
+            --shop-gold: #F7C32E;
+            --shop-dark: #1A1A1A;
+            --shop-muted: #777F8C;
+            --shop-soft: #F7FAFF;
+            --shop-line: #E5E5EB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .shop-page {
+            padding-top: var(--header-height, 82px);
+            color: var(--shop-dark);
+        }
+
+        /* SHOP HERO */
+        .shop-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: var(--shop-dark);
+            color: #fff;
+            padding: clamp(70px, 9vw, 110px) 0;
+        }
+
+        .shop-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 480px;
+            height: 480px;
+            right: -130px;
+            top: -260px;
+            border: 1px solid rgba(41,171,226,.4);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 45px rgba(41,171,226,.04),
+                0 0 0 90px rgba(247,195,46,.025);
+            animation: shopOrbit 24s linear infinite;
+        }
+
+        .shop-hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: -40%;
+            bottom: 12%;
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--shop-blue),
+                var(--shop-gold),
+                transparent
+            );
+            transform: rotate(-10deg);
+            animation: shopLight 8s ease-in-out infinite alternate;
+        }
+
+        .shop-container {
+            width: min(1200px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .shop-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--shop-gold);
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            animation: shopEnter .7s .1s both;
+        }
+
+        .shop-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 2px;
+            background: var(--shop-gold);
+        }
+
+        .shop-hero h1 {
+            max-width: 850px;
+            margin: 23px 0 18px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3.2rem, 8vw, 6.8rem);
+            line-height: .98;
+            letter-spacing: -.07em;
+            animation: shopEnter .8s .2s both;
+        }
+
+        .shop-hero h1 span {
+            color: var(--shop-blue);
+        }
+
+        .shop-hero-copy {
+            max-width: 650px;
+            margin: 0;
+            color: rgba(255,255,255,.76);
+            font-size: 1.03rem;
+            line-height: 1.85;
+            animation: shopEnter .8s .35s both;
+        }
+
+        .shop-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 28px;
+            animation: shopEnter .8s .45s both;
+        }
+
+        .shop-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 47px;
+            padding: 13px 21px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            background: var(--shop-blue);
+            color: #fff;
+            font: inherit;
+            font-size: .91rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform .25s ease, background .25s ease;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-3px);
+            background: #168fc4;
+        }
+
+        .shop-button-outline {
+            background: transparent;
+            border-color: rgba(255,255,255,.35);
+            color: #fff;
+        }
+
+        .shop-button-outline:hover {
+            background: rgba(255,255,255,.08);
+        }
+
+        /* PURPOSE STRIP */
+        .shop-purpose {
+            background: var(--shop-soft);
+            border-bottom: 1px solid #eaf0f8;
+        }
+
+        .shop-purpose-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 28px;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        .shop-purpose h2 {
+            margin: 0 0 6px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .shop-purpose p {
+            margin: 0;
+            color: var(--shop-muted);
+            font-size: .92rem;
+            line-height: 1.75;
+        }
+
+        .shop-purpose-mark {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid var(--shop-line);
+            color: var(--shop-blue);
+            font-size: 1.5rem;
+        }
+
+        /* PRODUCT SECTION */
+        .shop-products-section {
+            padding: 72px 0 88px;
+        }
+
+        .shop-section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .shop-section-kicker {
+            margin: 0 0 9px;
+            color: #087eae;
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .shop-section-heading h2 {
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -.055em;
+        }
+
+        .shop-section-description {
+            max-width: 470px;
+            margin: 12px 0 0;
+            color: var(--shop-muted);
+            font-size: .94rem;
+            line-height: 1.8;
+        }
+
+        .shop-stock-note {
+            color: var(--shop-muted);
+            font-size: .84rem;
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        /* CATEGORY FILTERS */
+        .shop-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 30px;
+        }
+
+        .shop-filter {
+            padding: 10px 16px;
+            border: 1px solid var(--shop-line);
+            border-radius: 30px;
+            background: #fff;
+            color: #596373;
+            font: inherit;
+            font-size: .85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .shop-filter:hover,
+        .shop-filter.active {
+            border-color: var(--shop-dark);
+            background: var(--shop-dark);
+            color: #fff;
+        }
+
+        /* PRODUCT GRID */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px 19px;
+        }
+
+        .shop-card {
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid var(--shop-line);
+            border-radius: 13px;
+            background: #fff;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 35px rgba(17,23,34,.08);
+        }
+
+        .shop-card[hidden] {
+            display: none !important;
+        }
+
+        .shop-image-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 4.25;
+            background: linear-gradient(145deg, #f7faff, #eaf4fc);
+        }
+
+        .shop-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .55s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .shop-card:hover .shop-image {
+            transform: scale(1.045);
+        }
+
+        .shop-image-fallback {
+            position: absolute;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px;
+            color: #647184;
+            text-align: center;
+        }
+
+        .shop-image-fallback span {
+            display: grid;
+            place-items: center;
+            width: 68px;
+            height: 68px;
+            border: 1px solid rgba(41,171,226,.25);
+            border-radius: 50%;
+            background: rgba(255,255,255,.7);
+            color: var(--shop-blue);
+            font-size: 1.8rem;
+        }
+
+        .shop-image-fallback small {
+            font-size: .78rem;
+            line-height: 1.5;
+        }
+
+        .shop-category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 1;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.94);
+            color: #3f4b5a;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        .shop-card-body {
+            padding: 17px;
+        }
+
+        .shop-card h3 {
+            margin: 0 0 8px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.35;
+        }
+
+        .shop-card p {
+            min-height: 45px;
+            margin: 0 0 17px;
+            color: var(--shop-muted);
+            font-size: .83rem;
+            line-height: 1.65;
+        }
+
+        .shop-card .shop-button {
+            width: 100%;
+            min-height: 43px;
+            padding: 11px 12px;
+            font-size: .84rem;
+        }
+
+        .shop-card .shop-button span {
+            transition: transform .2s ease;
+        }
+
+        .shop-card .shop-button:hover span {
+            transform: translateX(3px);
+        }
+
+        /* CUSTOM ENQUIRIES */
+        .shop-custom {
+            padding: 65px 0;
+            background: var(--shop-soft);
+            border-top: 1px solid var(--shop-line);
+        }
+
+        .shop-custom-inner {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .shop-custom h2 {
+            margin: 0 0 15px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            line-height: 1.15;
+            letter-spacing: -.045em;
+        }
+
+        .shop-custom p {
+            color: var(--shop-muted);
+            font-size: .96rem;
+            line-height: 1.85;
+        }
+
+        .shop-custom-box {
+            padding: 26px;
+            border: 1px solid var(--shop-line);
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .shop-custom-box strong {
+            display: block;
+            margin-bottom: 9px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.08rem;
+        }
+
+        .shop-custom-box p {
+            margin-bottom: 20px;
+            font-size: .88rem;
+        }
+
+        .shop-custom-box .shop-button {
+            width: 100%;
+        }
+
+        .shop-bottom-note {
+            margin: 25px 0 0;
+            color: var(--shop-muted);
+            font-size: .82rem;
+            line-height: 1.7;
+        }
+
+        /* ANIMATIONS */
+        .shop-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .js-ready .shop-reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .js-ready .shop-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes shopEnter {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shopOrbit {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes shopLight {
+            from {
+                transform: translateX(-15px) rotate(-10deg);
+                opacity: .3;
+            }
+            to {
+                transform: translateX(65px) rotate(-10deg);
+                opacity: .9;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .shop-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .shop-hero {
+                padding: 70px 0;
+            }
+
+            .shop-hero::before {
+                right: -350px;
+            }
+
+            .shop-purpose-inner {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .shop-purpose-mark {
+                display: none;
+            }
+
+            .shop-products-section {
+                padding: 48px 0 60px;
+            }
+
+            .shop-section-heading {
+                display: block;
+            }
+
+            .shop-stock-note {
+                margin-top: 12px;
+                text-align: left;
+            }
+
+            .shop-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px 12px;
+            }
+
+            .shop-card-body {
+                padding: 12px;
+            }
+
+            .shop-card h3 {
+                font-size: .96rem;
+            }
+
+            .shop-card p {
+                min-height: 58px;
+                font-size: .79rem;
+            }
+
+            .shop-category-tag {
+                top: 8px;
+                left: 8px;
+                padding: 5px 8px;
+                font-size: .62rem;
+            }
+
+            .shop-custom {
+                padding: 45px 0;
+            }
+
+            .shop-custom-inner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .shop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-card {
+                display: grid;
+                grid-template-columns: 42% 58%;
+            }
+
+            .shop-image-wrap {
+                height: 100%;
+                min-height: 220px;
+                aspect-ratio: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .js-ready .shop-reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+            <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+            <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="ministry.html">Ministry</a>
+            <a href="music.html">Sound &amp; Media</a>
+            <a href="events.html">Events</a>
+            <a href="community.html">Community</a>
+            <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+        </div>
+    </nav>
+</header>
+
+<main class="shop-page">
+
+    <section class="shop-hero">
+        <div class="shop-container">
+            <div class="shop-eyebrow">Wear the purpose. Support the vision.</div>
+
+            <h1>More than<br><span>Merchandise.</span></h1>
+
+            <p class="shop-hero-copy">
+                Discover Rafiki merchandise, music essentials and creative
+                experiences. Every purchase is an opportunity to support
+                our ministry, worship and community outreach.
+            </p>
+
+            <div class="shop-hero-actions">
+                <a class="shop-button" href="#shop-products">
+                    Explore the shop <span aria-hidden="true">↓</span>
+                </a>
+                <a class="shop-button shop-button-outline"
+                   href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3l%2C%20I%27d%20like%20to%20ask%20about%20your%20shop%20and%20available%20items."
+                   target="_blank" rel="noopener noreferrer">
+                    Ask us on WhatsApp ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-purpose">
+        <div class="shop-container shop-purpose-inner">
+            <div>
+                <h2>Every purchase supports the purpose.</h2>
+                <p>
+                    Your support helps us keep creating music, serving communities
+                    and building a ministry centred on worship and fellowship.
+                </p>
+            </div>
+            <div class="shop-purpose-mark" aria-hidden="true">✦</div>
+        </div>
+    </section>
+
+    <section class="shop-products-section" id="shop-products">
+        <div class="shop-container">
+
+            <div class="shop-section-heading shop-reveal">
+                <div>
+                    <p class="shop-section-kicker">The Rafiki collection</p>
+                    <h2>Find your something.</h2>
+                    <p class="shop-section-description">
+                        Explore our collection and message us to confirm the
+                        current price, availability and delivery or collection options.
+                    </p>
+                </div>
+                <p class="shop-stock-note">
+                    Items are subject to availability.<br>
+                    Prices confirmed through WhatsApp.
+                </p>
+            </div>
+
+            <div class="shop-filters shop-reveal" role="group" aria-label="Filter shop products">
+                <button class="shop-filter active" type="button" data-filter="all" aria-pressed="true">All items</button>
+                <button class="shop-filter" type="button" data-filter="apparel" aria-pressed="false">Apparel</button>
+                <button class="shop-filter" type="button" data-filter="accessories" aria-pressed="false">Accessories</button>
+                <button class="shop-filter" type="button" data-filter="music" aria-pressed="false">Music &amp; Studio</button>
+            </div>
+
+            <div class="shop-grid">
+
+                <!-- APPAREL -->
+
+                <article class="shop-card shop-reveal" data-category="apparel">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Apparel</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-cap.jpg" alt="Rafiki branded cap" loading="lazy">
+                        <div class="shop-image-fallback"><span>♧</span><small>Add rafiki-cap.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki Cap</h3>
+                        <p>A simple everyday cap with Rafiki identity.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Cap">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="apparel">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Apparel</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-tshirt-black.jpg" alt="Black Rafiki Zespół T-shirt" loading="lazy">
+                        <div class="shop-image-fallback"><span>✦</span><small>Add rafiki-tshirt-black.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki T-shirt — Black</h3>
+                        <p>Wear the vision wherever you go.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki T-shirt — Black">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="apparel">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Apparel</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-tshirt-white.jpg" alt="White Rafiki Zespół T-shirt" loading="lazy">
+                        <div class="shop-image-fallback"><span>✦</span><small>Add rafiki-tshirt-white.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki T-shirt — White</h3>
+                        <p>A clean, versatile design for everyday wear.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki T-shirt — White">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="apparel">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Apparel</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-hoodie.jpg" alt="Rafiki Zespół hoodie" loading="lazy">
+                        <div class="shop-image-fallback"><span>♧</span><small>Add rafiki-hoodie.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki Hoodie</h3>
+                        <p>Comfortable layers with a ministry-inspired look.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Hoodie">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <!-- ACCESSORIES -->
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-tote-bag.jpg" alt="Rafiki tote bag" loading="lazy">
+                        <div class="shop-image-fallback"><span>▱</span><small>Add rafiki-tote-bag.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki Tote Bag</h3>
+                        <p>A reusable bag for everyday essentials.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Tote Bag">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-backpack.jpg" alt="Rafiki backpack" loading="lazy">
+                        <div class="shop-image-fallback"><span>▣</span><small>Add rafiki-backpack.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Backpack</h3>
+                        <p>Useful for rehearsals, school and travel.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Backpack">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-mug.jpg" alt="Rafiki branded mug" loading="lazy">
+                        <div class="shop-image-fallback"><span>☕</span><small>Add rafiki-mug.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki Mug</h3>
+                        <p>A small everyday reminder of the vision.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Mug">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-flask.jpg" alt="Rafiki reusable flask" loading="lazy">
+                        <div class="shop-image-fallback"><span>♧</span><small>Add rafiki-flask.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Reusable Flask</h3>
+                        <p>Carry your drink to work, rehearsals or events.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Reusable Flask">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-notebook.jpg" alt="Rafiki notebook" loading="lazy">
+                        <div class="shop-image-fallback"><span>▤</span><small>Add rafiki-notebook.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Notebook</h3>
+                        <p>For lyrics, reflections, plans and new ideas.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Notebook">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-pen.jpg" alt="Rafiki branded pen" loading="lazy">
+                        <div class="shop-image-fallback"><span>✎</span><small>Add rafiki-pen.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki Pen</h3>
+                        <p>A practical branded stationery essential.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Pen">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="accessories">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Accessories</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-wristband.jpg" alt="Rafiki wristband" loading="lazy">
+                        <div class="shop-image-fallback"><span>◉</span><small>Add rafiki-wristband.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Rafiki Wristband</h3>
+                        <p>A simple accessory for supporters and friends.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Rafiki Wristband">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <!-- MUSIC AND STUDIO -->
+
+                <article class="shop-card shop-reveal" data-category="music">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Music</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-drumsticks.jpg" alt="Drumsticks for musicians" loading="lazy">
+                        <div class="shop-image-fallback"><span>♫</span><small>Add rafiki-drumsticks.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Drumsticks</h3>
+                        <p>For drummers, practice sessions and live music.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Drumsticks">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="music">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Music</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-keyboard.jpg" alt="Musical keyboard equipment" loading="lazy">
+                        <div class="shop-image-fallback"><span>♫</span><small>Add rafiki-keyboard.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Keyboard &amp; Music Gear</h3>
+                        <p>Ask us about available instruments and equipment.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Keyboard or Music Equipment">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+                <article class="shop-card shop-reveal" data-category="music">
+                    <div class="shop-image-wrap">
+                        <span class="shop-category-tag">Studio</span>
+                        <img class="shop-image" src="../assets/images/shop/rafiki-studio-session.jpg" alt="Music studio recording session" loading="lazy">
+                        <div class="shop-image-fallback"><span>♫</span><small>Add rafiki-studio-session.jpg to the shop images folder</small></div>
+                    </div>
+                    <div class="shop-card-body">
+                        <h3>Studio Sessions</h3>
+                        <p>Ask about recording sessions and availability.</p>
+                        <button class="shop-button shop-buy" type="button" data-product="Studio Session">Ask on WhatsApp <span>↗</span></button>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="shop-bottom-note shop-reveal">
+                Product images are illustrative until replaced with your actual
+                merchandise photographs. Availability, pricing and fulfilment
+                should be confirmed directly before payment.
+            </p>
+        </div>
+    </section>
+
+    <section class="shop-custom">
+        <div class="shop-container shop-custom-inner">
+            <div class="shop-reveal">
+                <p class="shop-section-kicker">Something else in mind?</p>
+                <h2>Looking for something we haven't listed?</h2>
+                <p>
+                    We may have other merchandise, stationery, music accessories
+                    or creative services available. Send us an enquiry and let us
+                    know what you need.
+                </p>
+            </div>
+
+            <div class="shop-custom-box shop-reveal">
+                <strong>Let's talk about it.</strong>
+                <p>
+                    Message Rafiki Zespół to ask about other products,
+                    bulk orders, custom merchandise or studio enquiries.
+                </p>
+                <a class="shop-button"
+                   href="https://wa.me/254798562612?text=Hello%20Rafiki%20Zesp%C3%B3l%2C%20I%27m%20interested%20in%20an%20item%20or%20service%20that%20isn%27t%20listed%20on%20your%20shop.%20Could%20you%20please%20share%20availability%20and%20pricing%3F"
+                   target="_blank" rel="noopener noreferrer">
+                    Enquire on WhatsApp ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="../index.html">
+                    <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                    <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                </a>
+                <p>
+                    Where Music Meets Purpose. Serving God's purpose
+                    in our generation through music and worship.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Discover</h4>
+                <a href="about.html">About Rafiki</a>
+                <a href="vision.html">Our Vision</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="journey.html">Our Journey</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Our Ministry</h4>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Get Involved</h4>
+                <a href="invite.html">Invite Rafiki</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="partner.html">Partner With Us</a>
+                <a href="support.html">Support the Vision</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p>©️ <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(() => {
+    const whatsappNumber = "254798562612";
+
+    /* Open WhatsApp with the selected product in the message */
+    document.querySelectorAll(".shop-buy").forEach(button => {
+        button.addEventListener("click", () => {
+            const product = button.dataset.product;
+
+            const message =
+                `Hello Rafiki Zespół! I'm interested in: ${product}. ` +
+                `Could you please confirm its availability, price, payment options, ` +
+                `and delivery or collection arrangements?`;
+
+            const url =
+                `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            window.open(url, "_blank", "noopener,noreferrer");
+        });
+    });
+
+    /* Product category filters */
+    const filterButtons = document.querySelectorAll(".shop-filter");
+    const productCards = document.querySelectorAll(".shop-card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.filter;
+
+            filterButtons.forEach(item => {
+                const selected = item === button;
+                item.classList.toggle("active", selected);
+                item.setAttribute("aria-pressed", String(selected));
+            });
+
+            productCards.forEach(card => {
+                const matches =
+                    filter === "all" || card.dataset.category === filter;
+
+                card.hidden = !matches;
+            });
+        });
+    });
+
+    /* Show a designed placeholder if a product photo has not been added yet */
+    document.querySelectorAll(".shop-image").forEach(img => {
+        const showFallback = () => {
+            img.style.display = "none";
+
+            const fallback = img
+                .closest(".shop-image-wrap")
+                .querySelector(".shop-image-fallback");
+
+            if (fallback) {
+                fallback.style.display = "flex";
+            }
+        };
+
+        img.addEventListener("error", showFallback);
+
+        if (img.complete && img.naturalWidth === 0) {
+            showFallback();
+        }
+    });
+
+    /* Reveal elements as visitors scroll */
+    const revealItems = document.querySelectorAll(".shop-reveal");
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if ("IntersectionObserver" in window && !reducedMotion) {
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    currentObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: "0px 0px -25px 0px"
+        });
+
+        revealItems.forEach(item => observer.observe(item));
+    } else {
+        revealItems.forEach(item => item.classList.add("is-visible"));
+    }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rafiki Zespół Terms and Conditions for website use, events, original content and merchandise.">
+    <title>Terms & Conditions | Rafiki Zespół</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
+
+    <style>
+        :root {
+            --terms-blue: #29ABE2;
+            --terms-gold: #F7C32E;
+            --terms-dark: #1A1A1A;
+            --terms-muted: #687383;
+            --terms-soft: #F7FAFF;
+            --terms-line: #E5E5EB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .terms-page {
+            padding-top: var(--header-height, 82px);
+            color: #202733;
+        }
+
+        /* UNIQUE TERMS PAGE HERO ANIMATION */
+        .terms-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: var(--terms-dark);
+            color: #fff;
+            padding: clamp(75px, 10vw, 125px) 0;
+        }
+
+        .terms-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 500px;
+            height: 500px;
+            right: -120px;
+            top: -270px;
+            border: 1px solid rgba(41,171,226,.4);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 45px rgba(41,171,226,.045),
+                0 0 0 90px rgba(247,195,46,.035);
+            animation: termsOrbit 22s linear infinite;
+        }
+
+        .terms-hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: -10%;
+            bottom: 17%;
+            width: 65%;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--terms-blue),
+                var(--terms-gold),
+                transparent
+            );
+            transform: rotate(-12deg);
+            animation: termsTrail 6s ease-in-out infinite alternate;
+        }
+
+        .terms-hero-inner,
+        .terms-layout {
+            width: min(1200px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        .terms-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--terms-gold);
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            animation: termsEnter .7s .1s both;
+        }
+
+        .terms-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 2px;
+            background: var(--terms-gold);
+        }
+
+        .terms-hero h1 {
+            max-width: 850px;
+            margin: 22px 0;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 8vw, 6.3rem);
+            line-height: .98;
+            letter-spacing: -.065em;
+            animation: termsEnter .8s .2s both;
+        }
+
+        .terms-hero h1 span {
+            color: var(--terms-blue);
+        }
+
+        .terms-hero-copy {
+            max-width: 650px;
+            color: rgba(255,255,255,.76);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            animation: termsEnter .8s .35s both;
+        }
+
+        .terms-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+            margin-top: 26px;
+            color: rgba(255,255,255,.75);
+            font-size: .86rem;
+            animation: termsEnter .8s .45s both;
+        }
+
+        .terms-meta span::before {
+            content: "•";
+            color: var(--terms-gold);
+            margin-right: 8px;
+        }
+
+        .terms-layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: clamp(35px, 6vw, 80px);
+            align-items: start;
+            padding-top: 75px;
+            padding-bottom: 95px;
+        }
+
+        .terms-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .terms-sidebar-label {
+            margin: 0 0 18px;
+            color: var(--terms-muted);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .terms-toc {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-left: 1px solid var(--terms-line);
+        }
+
+        .terms-toc a {
+            display: block;
+            padding: 9px 12px 9px 16px;
+            border-left: 2px solid transparent;
+            margin-left: -1px;
+            color: #687383;
+            font-size: .86rem;
+            line-height: 1.5;
+            text-decoration: none;
+            transition: .25s ease;
+        }
+
+        .terms-toc a:hover,
+        .terms-toc a.active {
+            color: var(--terms-dark);
+            border-left-color: var(--terms-blue);
+            transform: translateX(3px);
+        }
+
+        .terms-toc a.active {
+            font-weight: 700;
+        }
+
+        .terms-contact-card {
+            margin-top: 28px;
+            padding: 22px;
+            background: var(--terms-soft);
+            border: 1px solid #eaf0f8;
+            border-radius: 15px;
+        }
+
+        .terms-contact-card strong {
+            display: block;
+            margin-bottom: 8px;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .terms-contact-card p {
+            color: var(--terms-muted);
+            font-size: .86rem;
+            line-height: 1.7;
+        }
+
+        .terms-contact-card a {
+            color: #087eae;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .terms-toc-mobile {
+            display: none;
+        }
+
+        .terms-intro {
+            margin: 0 0 10px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--terms-line);
+            color: var(--terms-muted);
+            font-size: 1.02rem;
+            line-height: 1.9;
+        }
+
+        .terms-section {
+            position: relative;
+            padding: 36px 0 38px 65px;
+            border-bottom: 1px solid var(--terms-line);
+            scroll-margin-top: 110px;
+        }
+
+        .terms-section:last-child {
+            border-bottom: 0;
+        }
+
+        .terms-number {
+            position: absolute;
+            top: 38px;
+            left: 0;
+            color: var(--terms-blue);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .terms-number::after {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 2px;
+            margin-top: 9px;
+            background: var(--terms-gold);
+            transition: width .3s ease;
+        }
+
+        .terms-section:hover .terms-number::after {
+            width: 42px;
+        }
+
+        .terms-section h2 {
+            margin: 0 0 18px;
+            color: var(--terms-dark);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+            line-height: 1.3;
+            letter-spacing: -.035em;
+        }
+
+        .terms-section h3 {
+            margin: 27px 0 10px;
+            color: var(--terms-dark);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.45;
+        }
+
+        .terms-section p,
+        .terms-section li {
+            color: #566171;
+            font-size: .96rem;
+            line-height: 1.9;
+        }
+
+        .terms-section p {
+            margin: 0 0 15px;
+        }
+
+        .terms-section ul,
+        .terms-section ol {
+            padding-left: 22px;
+            margin: 10px 0 18px;
+        }
+
+        .terms-section li {
+            padding-left: 4px;
+            margin-bottom: 8px;
+        }
+
+        .terms-section li::marker {
+            color: var(--terms-blue);
+        }
+
+        .terms-section a,
+        .terms-last-note a {
+            color: #087eae;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        .terms-callout {
+            margin-top: 20px;
+            padding: 20px 22px;
+            border-left: 3px solid var(--terms-gold);
+            border-radius: 0 12px 12px 0;
+            background: #fffaf0;
+            color: #5e5a4d;
+            font-size: .93rem;
+            line-height: 1.8;
+        }
+
+        .terms-last-note {
+            margin-top: 28px;
+            padding: 22px;
+            border: 1px solid var(--terms-line);
+            border-radius: 14px;
+            background: var(--terms-soft);
+            color: var(--terms-muted);
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        .terms-back-top {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--terms-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .terms-back-top span {
+            color: var(--terms-blue);
+        }
+
+        /* Scroll-reveal animation */
+        .terms-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .js-ready .terms-reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition:
+                opacity .65s ease,
+                transform .65s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .js-ready .terms-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes termsEnter {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes termsOrbit {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes termsTrail {
+            from { transform: translateX(-10px) rotate(-12deg); opacity: .3; }
+            to { transform: translateX(60px) rotate(-12deg); opacity: .9; }
+        }
+
+        @media (max-width: 900px) {
+            .terms-layout {
+                grid-template-columns: 220px minmax(0, 1fr);
+                gap: 30px;
+            }
+
+            .terms-section {
+                padding-left: 52px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .terms-hero {
+                padding: 75px 0;
+            }
+
+            .terms-hero::before {
+                right: -360px;
+            }
+
+            .terms-layout {
+                display: block;
+                padding-top: 42px;
+                padding-bottom: 65px;
+            }
+
+            .terms-sidebar {
+                position: static;
+                margin-bottom: 32px;
+            }
+
+            .terms-toc-mobile {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                padding: 14px 16px;
+                border: 1px solid var(--terms-line);
+                border-radius: 12px;
+                background: #fff;
+                color: var(--terms-dark);
+                font: inherit;
+                font-weight: 700;
+                cursor: pointer;
+            }
+
+            .terms-toc-mobile span {
+                color: var(--terms-blue);
+            }
+
+            .terms-toc {
+                display: none;
+                margin-top: 10px;
+            }
+
+            .terms-sidebar.is-open .terms-toc {
+                display: block;
+            }
+
+            .terms-contact-card {
+                margin-top: 18px;
+            }
+
+            .terms-section {
+                padding: 30px 0 32px 42px;
+            }
+
+            .terms-number {
+                top: 33px;
+                font-size: .9rem;
+            }
+
+            .terms-section h2 {
+                font-size: 1.45rem;
+            }
+
+            .terms-section p,
+            .terms-section li {
+                font-size: .93rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .js-ready .terms-reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+            <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+            <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="main-menu">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="ministry.html">Ministry</a>
+            <a href="music.html">Sound &amp; Media</a>
+            <a href="events.html">Events</a>
+            <a href="community.html">Community</a>
+            <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+        </div>
+    </nav>
+</header>
+
+<main class="terms-page">
+
+    <section class="terms-hero">
+        <div class="terms-hero-inner">
+            <div class="terms-eyebrow">Clear principles. Shared respect.</div>
+            <h1>Terms &amp;<br><span>Conditions.</span></h1>
+            <p class="terms-hero-copy">
+                The guidelines that help us keep the Rafiki Zespół online
+                space welcoming, responsible and fair for everyone.
+            </p>
+            <div class="terms-meta">
+                <span>Rafiki Zespół Website and Online Shop</span>
+                <span>Last updated: 19 October 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="terms-layout">
+
+        <aside class="terms-sidebar" id="terms-sidebar">
+            <p class="terms-sidebar-label">On this page</p>
+
+            <button class="terms-toc-mobile" type="button" aria-expanded="false" aria-controls="terms-toc">
+                Browse sections <span aria-hidden="true">⌄</span>
+            </button>
+
+            <ol class="terms-toc" id="terms-toc">
+                <li><a href="#section-1">1. Introduction and Acceptance</a></li>
+                <li><a href="#section-2">2. About Rafiki Zespół</a></li>
+                <li><a href="#section-3">3. Responsible Use</a></li>
+                <li><a href="#section-4">4. Intellectual Property</a></li>
+                <li><a href="#section-5">5. Website Content</a></li>
+                <li><a href="#section-6">6. Events and Activities</a></li>
+                <li><a href="#section-7">7. Online Shop</a></li>
+                <li><a href="#section-8">8. External Links</a></li>
+                <li><a href="#section-9">9. Website Availability</a></li>
+                <li><a href="#section-10">10. Content Complaints</a></li>
+                <li><a href="#section-11">11. Liability</a></li>
+                <li><a href="#section-12">12. Indemnity</a></li>
+                <li><a href="#section-13">13. Privacy</a></li>
+                <li><a href="#section-14">14. Changes to Terms</a></li>
+                <li><a href="#section-15">15. Governing Law</a></li>
+                <li><a href="#section-16">16. Contact Information</a></li>
+            </ol>
+
+            <div class="terms-contact-card">
+                <strong>Need clarification?</strong>
+                <p>Contact our team about website use, content rights, events or merchandise.</p>
+                <a href="mailto:rafikizespol24@gmail.com">Email Rafiki Zespół ↗</a>
+            </div>
+        </aside>
+
+        <article class="terms-content">
+
+            <p class="terms-intro terms-reveal">
+                Please read these Terms and Conditions carefully. They explain
+                the rules for using our website, engaging with our content,
+                attending activities and purchasing merchandise where available.
+            </p>
+
+            <section class="terms-section terms-reveal" id="section-1">
+                <span class="terms-number">01</span>
+                <h2>Introduction and Acceptance</h2>
+                <p>Welcome to the official website of Rafiki Zespół (“Rafiki”, “we”, “our” or “us”).</p>
+                <p>These Terms and Conditions govern your access to and use of our website, its content, online features, event information, communications and merchandise shop.</p>
+                <p>By accessing or using the website, you agree to comply with these Terms and Conditions and applicable law. If you do not agree, please discontinue use of the website.</p>
+                <p>If you purchase merchandise, register for an event or use a particular service, additional terms may apply. Where additional terms are provided, they should be read together with these Terms and Conditions.</p>
+                <p>Nothing in these Terms and Conditions removes a right or protection that cannot lawfully be excluded under applicable law.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-2">
+                <span class="terms-number">02</span>
+                <h2>About Rafiki Zespół</h2>
+                <p>Rafiki Zespół is a Christian music and worship ministry focused on worship, fellowship, creative expression, community engagement, events and outreach.</p>
+                <p>The website is intended to provide information about our ministry, publish original content, share selected third-party material with appropriate permissions, announce activities, and offer merchandise where available.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-3">
+                <span class="terms-number">03</span>
+                <h2>Eligibility and Responsible Use</h2>
+                <p>Our website is intended for the general public and may be accessed by people of different ages.</p>
+                <p>If you are under the age of majority applicable to you, you should obtain the involvement of a parent or guardian where required, particularly before making purchases, creating an account or submitting personal information.</p>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the website for unlawful, fraudulent, abusive or misleading purposes.</li>
+                    <li>Attempt to gain unauthorised access to the website, its accounts or systems.</li>
+                    <li>Introduce malicious software or interfere with website security or operation.</li>
+                    <li>Misrepresent your identity or impersonate Rafiki or its representatives.</li>
+                    <li>Use the website to harass, threaten, defame or unlawfully expose another person.</li>
+                    <li>Submit false orders, misuse payment facilities or interfere with another person’s transaction.</li>
+                    <li>Scrape, copy or commercially exploit protected website content without authorisation.</li>
+                    <li>Infringe intellectual property, privacy, publicity or other legal rights.</li>
+                </ul>
+                <p>We may restrict or suspend access where reasonably necessary to address suspected misuse, security risks or legal violations.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-4">
+                <span class="terms-number">04</span>
+                <h2>Intellectual Property and Ownership</h2>
+
+                <h3>4.1 Rafiki’s Original Content</h3>
+                <p>Unless otherwise stated, original content created by Rafiki or rights lawfully assigned or licensed to Rafiki may be protected by copyright and other intellectual property laws.</p>
+                <p>This may include:</p>
+                <ul>
+                    <li>Original articles, reflections, ministry updates and written material.</li>
+                    <li>Original music, lyrics, arrangements and recordings for which Rafiki holds the relevant rights.</li>
+                    <li>Original photographs, videos and audiovisual productions.</li>
+                    <li>Logos, branding, graphics, illustrations, posters and website design elements.</li>
+                    <li>Other materials created for or lawfully controlled by Rafiki.</li>
+                </ul>
+                <p>All rights in such material remain with the relevant rights holder. Nothing on the website transfers ownership to a visitor.</p>
+
+                <h3>4.2 Permission Required for Reuse</h3>
+                <p>Unless permitted by law or expressly authorised in writing by the relevant rights holder, you must not reproduce, republish, distribute, modify, sell, commercially exploit or publicly communicate protected Rafiki content.</p>
+                <p>This restriction includes using Rafiki’s original photographs, videos, music, graphics or branding in advertisements, merchandise, promotional posters or other commercial projects without the required permission.</p>
+                <p>A link to our website or an acknowledgement of Rafiki as the source does not, by itself, grant permission to reproduce protected material.</p>
+                <p>Requests for permission may be sent to <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a>. Please identify the material, explain your intended use and state where and how it will be published.</p>
+                <p>Nothing in these Terms restricts uses permitted by applicable copyright law, including any relevant exceptions or limitations.</p>
+
+                <h3>4.3 Third-Party Content</h3>
+                <p>Some website content may originate from other artists, photographers, writers, musicians, event partners, public sources or other rights holders.</p>
+                <p>Such material remains subject to the rights of its respective owner. Its appearance on the Rafiki website does not mean that Rafiki owns it or that visitors are free to reuse it.</p>
+                <p>We aim to obtain the necessary permissions, licences or other lawful basis before publishing third-party content and to provide attribution where appropriate or required.</p>
+                <p>If you believe content on our website infringes your rights, contact us using the procedure in Section 10.</p>
+
+                <h3>4.4 Photographs and Videos of Individuals</h3>
+                <p>Copyright in a photograph or recording and the privacy or image-related rights of a person appearing in it are distinct matters.</p>
+                <p>Rafiki may own or hold a licence to a photograph without owning the identity or personal rights of every person depicted. Similarly, permission to photograph someone does not automatically transfer copyright in the resulting photograph.</p>
+                <p>Our publication of identifiable images is subject to applicable privacy, consent and other legal requirements. The fact that an image appears on the website does not grant visitors permission to reuse it.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-5">
+                <span class="terms-number">05</span>
+                <h2>Website Content and Religious Reflections</h2>
+                <p>Our articles, worship reflections, testimonies, music, commentary and ministry updates are published for informational, creative, spiritual or educational purposes.</p>
+                <p>Unless expressly stated otherwise:</p>
+                <ul>
+                    <li>Content reflects the purpose and context of the relevant publication.</li>
+                    <li>Reflections and opinions are not necessarily formal statements on behalf of every individual associated with Rafiki.</li>
+                    <li>Scripture quotations, song excerpts, photographs and other third-party material remain subject to their respective rights.</li>
+                    <li>We may correct, update, replace or remove material where appropriate.</li>
+                </ul>
+                <p>We aim to publish accurate and responsible information, but we do not guarantee that every article, announcement or external reference will remain current or complete indefinitely.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-6">
+                <span class="terms-number">06</span>
+                <h2>Events and Activities</h2>
+                <p>Event details, including dates, venues, schedules, ticket availability, participation requirements and programme arrangements, may change.</p>
+                <p>You should check the latest official announcement before attending an event.</p>
+                <p>Where registration, tickets, contributions or other charges apply, the applicable event-specific terms will govern those arrangements. Event cancellation, postponement, refunds, accessibility arrangements and participant requirements should be communicated in the relevant event information.</p>
+                <p>Participants must act lawfully and respectfully and comply with reasonable instructions intended to protect the safety and orderly conduct of an event.</p>
+
+                <h3>Photography at Events</h3>
+                <p>Photography and recording may take place at Rafiki events. We aim to provide appropriate notices and explain how recordings may be used.</p>
+                <p>Participation does not automatically amount to unlimited consent to every use of a person’s image. Where required, Rafiki will obtain appropriate consent or establish another lawful basis, with additional care for children and other vulnerable individuals.</p>
+                <p>If you have concerns about being photographed or recorded, please contact an organiser before or during the event, where practicable. You may also contact us after publication to request review, restriction or removal.</p>
+                <p>Specific event notices and consent forms may supplement this section but cannot override mandatory legal rights.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-7">
+                <span class="terms-number">07</span>
+                <h2>Online Shop and Merchandise</h2>
+                <p>Rafiki may offer merchandise through the website, including branded products and other items made available from time to time.</p>
+
+                <h3>7.1 Product Information</h3>
+                <p>We aim to display product descriptions, prices, images and other relevant information accurately. However, minor variations in colour, appearance, packaging or presentation may occur, including because of screen settings or supplier variations.</p>
+                <p>Product availability may change. We reserve the right to correct genuine errors and withdraw products where reasonably necessary, subject to applicable law and any existing contractual obligations.</p>
+
+                <h3>7.2 Orders and Acceptance</h3>
+                <p>Submitting an order is an offer to purchase the selected merchandise under the stated terms.</p>
+                <p>An automated acknowledgement of an order does not necessarily mean that the order has been accepted. Acceptance may be confirmed separately, depending on the purchasing system used.</p>
+                <p>If an order cannot be fulfilled, we will take reasonable steps to notify you and address any payment already collected in accordance with applicable law and the disclosed order terms.</p>
+
+                <h3>7.3 Prices and Payments</h3>
+                <p>Prices, applicable taxes, delivery charges and accepted payment methods will be displayed or communicated during checkout.</p>
+                <p>Payments may be processed through third-party payment providers. You must provide accurate information and use a payment method you are authorised to use.</p>
+                <p>Where a payment is unsuccessful, an order may remain unconfirmed or may be cancelled after reasonable notice, subject to applicable law.</p>
+
+                <h3>7.4 Delivery</h3>
+                <p>Delivery methods, estimated timeframes, applicable charges and any delivery restrictions should be disclosed during checkout or in the relevant shipping policy.</p>
+                <p>Delivery estimates are not guarantees unless expressly stated. Delays may occur due to circumstances outside our reasonable control.</p>
+                <p>Customers should provide accurate delivery details and notify us promptly of material errors.</p>
+
+                <h3>7.5 Returns, Refunds, Exchanges and Defective Products</h3>
+                <p><strong>Rafiki’s general sales policy is that goods sold are not refundable.</strong> Customers should review the product description, price, size, colour and other relevant details before completing a purchase.</p>
+                <p>This policy does not exclude or restrict any rights or remedies that must be provided under applicable law. Where goods are defective, misdescribed, incorrectly supplied or otherwise subject to a mandatory legal remedy, the matter will be handled in accordance with the applicable law.</p>
+                <p>If you receive an incorrect, damaged or defective item, contact <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a> with your order reference, a description of the issue and, where helpful, supporting photographs.</p>
+                <p>Any applicable remedy will be assessed under the relevant law and the disclosed order terms.</p>
+
+                <h3>7.6 Customer Responsibilities</h3>
+                <p>Customers are responsible for checking order details before submitting an order, keeping their account credentials secure where accounts are offered, and promptly reporting suspected unauthorised transactions.</p>
+                <p>We will handle customer information in accordance with our Privacy Policy.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-8">
+                <span class="terms-number">08</span>
+                <h2>External Links and Third-Party Services</h2>
+                <p>The website may contain links to or embedded material from third parties, including video-sharing services, social media platforms, payment providers and delivery services.</p>
+                <p>These services operate independently and may be governed by their own terms and privacy policies.</p>
+                <p>A link or embedded item does not necessarily mean that Rafiki endorses every statement, service or practice of the external provider. We are not responsible for independently operated websites to the extent permitted by law.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-9">
+                <span class="terms-number">09</span>
+                <h2>Availability and Changes to the Website</h2>
+                <p>We may modify, suspend or discontinue parts of the website to maintain, improve or protect our services.</p>
+                <p>We do not guarantee uninterrupted access or that every feature will always be available, error-free or compatible with every device.</p>
+                <p>Where reasonably possible, we will take appropriate steps to maintain essential website functionality and address material issues.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-10">
+                <span class="terms-number">10</span>
+                <h2>Copyright and Content Complaints</h2>
+                <p>If you believe material published on our website infringes your copyright, privacy or other rights, please email <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a> with the subject line “Content Rights or Removal Request.”</p>
+                <p>Please include:</p>
+                <ol>
+                    <li>Your name and contact information.</li>
+                    <li>A description of the material concerned and its location on the website.</li>
+                    <li>An explanation of the right or concern involved.</li>
+                    <li>Evidence of ownership, authority or your connection to the person depicted, where reasonably relevant.</li>
+                    <li>The action you are requesting, such as attribution correction, restriction, removal or further review.</li>
+                </ol>
+                <p>Please do not send unnecessary identity documents or sensitive personal information.</p>
+                <p>We will review the request, seek clarification where appropriate, and take reasonable action in accordance with applicable law. Where necessary, we may temporarily restrict access to disputed material while the matter is reviewed.</p>
+                <p>Submitting a complaint does not automatically establish infringement, but we will consider genuine requests fairly and promptly.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-11">
+                <span class="terms-number">11</span>
+                <h2>Limitation of Liability</h2>
+                <p>To the extent permitted by law, Rafiki does not guarantee that all website content will be uninterrupted, error-free or suitable for every purpose.</p>
+                <p>Nothing in these Terms excludes or limits liability where doing so would be unlawful, including any mandatory consumer protection rights or liability that cannot lawfully be excluded.</p>
+                <p>Subject to those limits, Rafiki will not be responsible for losses arising solely from circumstances outside its reasonable control, including independent third-party platform failures, internet disruptions or unauthorised conduct by unrelated parties.</p>
+                <p>This section does not remove any legal remedy available to you under applicable law.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-12">
+                <span class="terms-number">12</span>
+                <h2>Indemnity</h2>
+                <p>To the extent permitted by law, you may be responsible for losses and reasonable costs directly caused by your unlawful misuse of the website or infringement of another person’s rights.</p>
+                <p>This provision does not apply to the extent that a loss results from Rafiki’s own unlawful conduct, negligence or other liability that cannot legally be excluded or transferred to you.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-13">
+                <span class="terms-number">13</span>
+                <h2>Privacy</h2>
+                <p>Your use of the website is also governed by our <a href="privacy-policy.html">Privacy Policy</a>, which explains how we handle personal information, cookies, newsletters, accounts, transactions and event photography.</p>
+                <p>Where the two documents address privacy, they should be interpreted consistently with applicable data protection law.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-14">
+                <span class="terms-number">14</span>
+                <h2>Changes to These Terms</h2>
+                <p>We may revise these Terms and Conditions as the website, ministry activities or legal requirements change.</p>
+                <p>The current version will be published on this page with its revision date. Where required by law, material changes affecting an existing contract will be communicated appropriately.</p>
+                <p>Your continued use of the website after a revised version becomes applicable may be treated as acceptance only to the extent permitted by law. Where express agreement is legally required, we will seek it.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-15">
+                <span class="terms-number">15</span>
+                <h2>Governing Law and Disputes</h2>
+                <p>These Terms and Conditions are governed by the laws of Kenya, subject to any mandatory protections applicable in another jurisdiction.</p>
+                <p>We encourage users to contact us first to resolve concerns informally. Nothing in this section prevents either party from pursuing a lawful complaint, regulatory remedy or legal proceeding before a competent authority or court.</p>
+            </section>
+
+            <section class="terms-section terms-reveal" id="section-16">
+                <span class="terms-number">16</span>
+                <h2>Contact Information</h2>
+                <p>For questions about these Terms, intellectual property, website use, events or merchandise, contact:</p>
+                <p><strong>Rafiki Zespół</strong><br>
+                Email: <a href="mailto:rafikizespol24@gmail.com">rafikizespol24@gmail.com</a></p>
+                <div class="terms-callout">
+                    <strong>Notice:</strong> These Terms are intended to describe Rafiki’s website arrangements. Additional policies may be required for merchandise, event registration, ticket sales, donations or other services before those services are launched.
+                </div>
+            </section>
+
+            <div class="terms-last-note terms-reveal">
+                These Terms should be read alongside our
+                <a href="privacy-policy.html">Privacy Policy</a>
+                and any applicable event or service-specific terms.
+            </div>
+
+            <a class="terms-back-top" href="#top">Back to top <span>↑</span></a>
+        </article>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="../index.html">
+                    <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                    <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                </a>
+                <p>
+                    Where Music Meets Purpose. Serving God's purpose
+                    in our generation through music and worship.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Discover</h4>
+                <a href="about.html">About Rafiki</a>
+                <a href="vision.html">Our Vision</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="journey.html">Our Journey</a>
+            </div>
+            <div class="footer-column">
+                <h4>Our Ministry</h4>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+            <div class="footer-column">
+                <h4>Get Involved</h4>
+                <a href="invite.html">Invite Rafiki</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="partner.html">Partner With Us</a>
+                <a href="support.html">Support the Vision</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p>©️ <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html" aria-current="page">Terms</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(() => {
+    const sidebar = document.getElementById("terms-sidebar");
+    const toggle = document.querySelector(".terms-toc-mobile");
+    const links = [...document.querySelectorAll(".terms-toc a")];
+    const sections = [...document.querySelectorAll(".terms-section")];
+    const revealItems = document.querySelectorAll(".terms-reveal");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (toggle && sidebar) {
+        toggle.addEventListener("click", () => {
+            const open = sidebar.classList.toggle("is-open");
+            toggle.setAttribute("aria-expanded", String(open));
+        });
+    }
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            if (sidebar && toggle && window.innerWidth <= 700) {
+                sidebar.classList.remove("is-open");
+                toggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+
+    if ("IntersectionObserver" in window && !reducedMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: "0px 0px -25px 0px"
+        });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    links.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === "#" + entry.target.id
+                        );
+                    });
+                }
+            });
+        }, {
+            rootMargin: "-18% 0px -68% 0px",
+            threshold: 0
+        });
+
+        sections.forEach(section => sectionObserver.observe(section));
+    } else {
+        revealItems.forEach(item => item.classList.add("is-visible"));
+    }
+})();
+</script>
+
+</body>
+</html>

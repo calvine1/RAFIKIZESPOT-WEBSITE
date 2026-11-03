@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover the mission of Rafiki Zespół: spreading the message of Christ through heartfelt music, worship encounters and youth-centered outreach.">
+
+    <title>Our Mission | Rafiki Zespół</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* MISSION HERO */
+
+        .mission-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 110px 0 100px;
+            color: #fff;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(41,171,226,.22), transparent 35%),
+                linear-gradient(135deg, #111722 0%, #17283b 55%, #101820 100%);
+        }
+
+        .mission-hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -100px;
+            bottom: -150px;
+            border: 1px solid rgba(41,171,226,.35);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 35px rgba(41,171,226,.04),
+                0 0 0 70px rgba(41,171,226,.03);
+            pointer-events: none;
+        }
+
+        .mission-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .mission-eyebrow {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #29abe2;
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .mission-hero h1 {
+            max-width: 800px;
+            margin: 0 0 22px;
+            color: #fff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.08;
+        }
+
+        .mission-hero h1 span {
+            color: #29abe2;
+        }
+
+        .mission-hero p {
+            max-width: 650px;
+            margin: 0;
+            color: #d5deea;
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+
+        /* MISSION STATEMENT */
+
+        .mission-section {
+            padding: 90px 0;
+            background: #f7faff;
+        }
+
+        .mission-statement {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 55px 45px;
+            background: #fff;
+            border: 1px solid #e5e5eb;
+            border-radius: 22px;
+            box-shadow: 0 18px 55px rgba(17,23,34,.06);
+            text-align: center;
+        }
+
+        .mission-label {
+            margin-bottom: 20px;
+            color: #29abe2;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .mission-statement blockquote {
+            margin: 0;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.35rem, 3vw, 2.15rem);
+            font-weight: 600;
+            line-height: 1.55;
+        }
+
+        .mission-statement blockquote span {
+            color: #29abe2;
+        }
+
+        /* MISSION PILLARS */
+
+        .mission-focus {
+            padding: 85px 0;
+            background: #fff;
+        }
+
+        .mission-section-heading {
+            max-width: 700px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .mission-section-heading .eyebrow {
+            display: block;
+            margin-bottom: 12px;
+            color: #29abe2;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .mission-section-heading h2 {
+            margin: 0 0 16px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .mission-section-heading p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .mission-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .mission-pillar {
+            padding: 32px;
+            border: 1px solid #e5e5eb;
+            border-radius: 18px;
+            background: #fff;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .mission-pillar:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(17,23,34,.08);
+        }
+
+        .mission-pillar-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 22px;
+            border-radius: 14px;
+            background: #eaf7fd;
+            color: #168fc4;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .mission-pillar h3 {
+            margin: 0 0 12px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.3rem;
+        }
+
+        .mission-pillar p {
+            margin: 0;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* SCRIPTURE */
+
+        .mission-scripture {
+            padding: 75px 0;
+            background: #111722;
+            color: #fff;
+            text-align: center;
+        }
+
+        .mission-scripture .scripture-label {
+            display: block;
+            margin-bottom: 18px;
+            color: #29abe2;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .mission-scripture blockquote {
+            max-width: 850px;
+            margin: 0 auto 18px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2.1rem);
+            line-height: 1.6;
+        }
+
+        .mission-scripture p {
+            margin: 0;
+            color: #b7c5d5;
+        }
+
+        /* CALL TO ACTION */
+
+        .mission-cta {
+            padding: 85px 0;
+            background: #eaf7fd;
+            text-align: center;
+        }
+
+        .mission-cta h2 {
+            margin: 0 0 16px;
+            color: #1a1a1a;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .mission-cta p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .mission-cta-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .mission-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 25px;
+            border: 2px solid #29abe2;
+            border-radius: 8px;
+            background: #29abe2;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: .25s ease;
+        }
+
+        .mission-button:hover {
+            border-color: #168fc4;
+            background: #168fc4;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .mission-button-outline {
+            background: transparent;
+            color: #1a1a1a;
+        }
+
+        .mission-button-outline:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 850px) {
+            .mission-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-pillar {
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mission-hero {
+                padding: 80px 0 70px;
+            }
+
+            .mission-section,
+            .mission-focus {
+                padding: 65px 0;
+            }
+
+            .mission-statement {
+                padding: 38px 24px;
+            }
+
+            .mission-scripture,
+            .mission-cta {
+                padding: 65px 0;
+            }
+
+            .mission-cta-actions {
+                flex-direction: column;
+            }
+
+            .mission-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED WEBSITE HEADER: KEEP CONSISTENT -->
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a class="brand" href="../index.html" aria-label="Rafiki Zespół homepage">
+                <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="main-menu">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="ministry.html">Ministry</a>
+                <a href="music.html">Sound &amp; Media</a>
+                <a href="events.html">Events</a>
+                <a href="community.html">Community</a>
+                <a class="nav-cta" href="invite.html">Invite Rafiki ↗️</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="mission-hero">
+            <div class="container">
+                <div class="mission-hero-content">
+                    <span class="mission-eyebrow">Our Mission</span>
+
+                    <h1>Sharing Christ through <span>music and purpose.</span></h1>
+
+                    <p>
+                        We use music, worship and youth-centered outreach to share
+                        the message of Christ, inspire hope and encourage a life
+                        rooted in faith and godly living.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFICIAL MISSION STATEMENT -->
+
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-statement">
+
+                    <div class="mission-label">Our Mission Statement</div>
+
+                    <blockquote>
+                        “To spread the message of Christ through heartfelt music,
+                        worship encounters and youth-centered outreach that inspire
+                        <span>hope, faith and godly living.</span>”
+                    </blockquote>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW WE LIVE THE MISSION -->
+
+        <section class="mission-focus">
+            <div class="container">
+
+                <div class="mission-section-heading">
+                    <span class="eyebrow">How We Live Our Mission</span>
+
+                    <h2>Faith expressed through action.</h2>
+
+                    <p>
+                        Our mission goes beyond the stage. We seek to create
+                        meaningful encounters with God and make a positive
+                        difference in the lives of young people and our communities.
+                    </p>
+                </div>
+
+                <div class="mission-pillars">
+
+                    <article class="mission-pillar">
+                        <div class="mission-pillar-number">01</div>
+
+                        <h3>Heartfelt Music</h3>
+
+                        <p>
+                            Using music as a meaningful expression of faith,
+                            sharing the Gospel and creating moments that draw
+                            hearts closer to Christ.
+                        </p>
+                    </article>
+
+                    <article class="mission-pillar">
+                        <div class="mission-pillar-number">02</div>
+
+                        <h3>Worship Encounters</h3>
+
+                        <p>
+                            Serving through worship that encourages spiritual
+                            growth, renews hope and creates room for people
+                            to encounter God's presence.
+                        </p>
+                    </article>
+
+                    <article class="mission-pillar">
+                        <div class="mission-pillar-number">03</div>
+
+                        <h3>Youth-Centered Outreach</h3>
+
+                        <p>
+                            Encouraging young people to discover their purpose,
+                            strengthen their faith and live out godly values
+                            in everyday life.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SCRIPTURAL FOUNDATION -->
+
+        <section class="mission-scripture">
+            <div class="container">
+
+                <span class="scripture-label">Our Foundation</span>
+
+                <blockquote>
+                    “For when David had served God's purpose in his own
+                    generation, he fell asleep.”
+                </blockquote>
+
+                <p>Acts 13:36</p>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+
+        <section class="mission-cta">
+            <div class="container">
+
+                <h2>Be part of the mission.</h2>
+
+                <p>
+                    Whether through your time, talents, partnership or presence,
+                    there is a place for you in what God is building through
+                    Rafiki Zespół.
+                </p>
+
+                <div class="mission-cta-actions">
+                    <a class="mission-button" href="volunteer.html">
+                        Volunteer With Us
+                    </a>
+
+                    <a class="mission-button mission-button-outline" href="partner.html">
+                        Partner With Us
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SHARED WEBSITE FOOTER -->
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a class="brand" href="../index.html">
+                        <img class="brand-logo" src="../assets/images/logos/rafiki-logo.jpeg" alt="Rafiki Zespół logo">
+                        <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                    </a>
+
+                    <p>
+                        Where Music Meets Purpose. Serving God's purpose
+                        in our generation through music and worship.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Discover</h4>
+                    <a href="about.html">About Rafiki</a>
+                    <a href="vision.html">Our Vision</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="journey.html">Our Journey</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Ministry</h4>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="community.html">Community</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <a href="invite.html">Invite Rafiki</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="partner.html">Partner With Us</a>
+                    <a href="support.html">Support the Vision</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>© <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>

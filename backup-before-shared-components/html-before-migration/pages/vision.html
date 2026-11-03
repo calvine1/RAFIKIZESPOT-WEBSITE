@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the vision of Rafiki Zespół: raising a generation of young believers who find purpose, identity and fulfillment in Christ through music and worship.">
+    <title>Our Vision | Rafiki Zespół</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .vision-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 90px;
+            background: #111722;
+            color: #fff;
+        }
+
+        .vision-hero::before {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            right: -100px;
+            top: -150px;
+            border-radius: 50%;
+            background: rgba(41, 171, 226, 0.16);
+            filter: blur(3px);
+        }
+
+        .vision-hero::after {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            left: -100px;
+            bottom: -130px;
+            border-radius: 50%;
+            background: rgba(247, 195, 46, 0.10);
+        }
+
+        .vision-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vision-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            color: #69cef6;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .vision-eyebrow::before,
+        .vision-eyebrow::after {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: #f7c32e;
+        }
+
+        .vision-hero h1 {
+            margin: 0 0 24px;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .vision-hero h1 span {
+            color: #29abe2;
+        }
+
+        .vision-hero-description {
+            max-width: 660px;
+            margin: 0 auto;
+            color: #d5dce6;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .vision-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .vision-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .vision-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .vision-button-primary {
+            background: #29abe2;
+            color: #fff;
+        }
+
+        .vision-button-primary:hover {
+            background: #168fc5;
+        }
+
+        .vision-button-outline {
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+        }
+
+        .vision-button-outline:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .vision-statement-section {
+            padding: 85px 0;
+            background: #f7faff;
+        }
+
+        .vision-statement-card {
+            position: relative;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: clamp(30px, 6vw, 65px);
+            border: 1px solid #e5e5eb;
+            border-radius: 22px;
+            background: #fff;
+            text-align: center;
+            box-shadow: 0 18px 55px rgba(20, 40, 70, 0.06);
+        }
+
+        .vision-mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            border-radius: 18px;
+            background: #eaf7ff;
+            color: #168fc5;
+        }
+
+        .vision-mark svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .vision-statement-card .section-label {
+            margin-bottom: 15px;
+            color: #168fc5;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .vision-statement-card h2 {
+            margin: 0 0 20px;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+        }
+
+        .vision-statement-card blockquote {
+            margin: 0;
+            color: #303947;
+            font-size: clamp(1.25rem, 3vw, 1.8rem);
+            font-weight: 500;
+            line-height: 1.75;
+        }
+
+        .vision-statement-card blockquote strong {
+            color: #168fc5;
+        }
+
+        .vision-statement-card .statement-reference {
+            margin-top: 25px;
+            color: #858b96;
+            font-size: 0.9rem;
+        }
+
+        .vision-pillars-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .vision-section-heading {
+            max-width: 700px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .vision-section-heading .section-label {
+            color: #168fc5;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .vision-section-heading h2 {
+            margin: 13px 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+        }
+
+        .vision-section-heading p {
+            color: #737b88;
+            line-height: 1.8;
+        }
+
+        .vision-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .vision-pillar {
+            padding: 30px 25px;
+            border: 1px solid #e5e5eb;
+            border-radius: 18px;
+            background: #fff;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .vision-pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(20, 40, 70, 0.08);
+        }
+
+        .vision-pillar-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            margin-bottom: 20px;
+            border-radius: 13px;
+            background: #eaf7ff;
+            color: #168fc5;
+            font-weight: 800;
+        }
+
+        .vision-pillar:nth-child(2) .vision-pillar-number {
+            background: #fff6d9;
+            color: #946b00;
+        }
+
+        .vision-pillar:nth-child(3) .vision-pillar-number {
+            background: #fff0ec;
+            color: #c45a43;
+        }
+
+        .vision-pillar h3 {
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+        }
+
+        .vision-pillar p {
+            margin: 0;
+            color: #737b88;
+            line-height: 1.8;
+        }
+
+        .vision-scripture {
+            padding: 70px 20px;
+            background: #eaf7ff;
+            text-align: center;
+        }
+
+        .vision-scripture blockquote {
+            max-width: 780px;
+            margin: 0 auto;
+            color: #263442;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .vision-scripture cite {
+            display: block;
+            margin-top: 18px;
+            color: #168fc5;
+            font-size: 0.95rem;
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .vision-cta {
+            padding: 75px 20px;
+            background: #111722;
+            color: #fff;
+            text-align: center;
+        }
+
+        .vision-cta h2 {
+            margin: 0 0 16px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .vision-cta p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #d5dce6;
+            line-height: 1.8;
+        }
+
+        .vision-cta-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .vision-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-hero {
+                padding: 75px 0 70px;
+            }
+
+            .vision-statement-section,
+            .vision-pillars-section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .vision-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .vision-hero-actions,
+            .vision-cta-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .vision-button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SHARED HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <a class="brand" href="../index.html">
+                    <img class="brand-logo"
+                         src="../assets/images/logos/rafiki-logo.jpeg"
+                         alt="Rafiki Zespół logo">
+                    <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                </a>
+
+                <button class="menu-toggle"
+                        type="button"
+                        aria-label="Toggle navigation"
+                        aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="contact.html">Contact</a>
+                    <a class="nav-cta" href="invite.html">Invite Rafiki</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="vision-hero">
+            <div class="container vision-hero-content">
+                <span class="vision-eyebrow">Our Vision</span>
+
+                <h1>
+                    A generation<br>
+                    <span>with purpose.</span>
+                </h1>
+
+                <p class="vision-hero-description">
+                    We envision a generation of young believers discovering
+                    who they are in Christ, finding fulfillment in Him, and
+                    encountering His transforming presence through music and worship.
+                </p>
+
+                <div class="vision-hero-actions">
+                    <a href="#vision-statement" class="vision-button vision-button-primary">
+                        Discover Our Vision
+                    </a>
+                    <a href="mission.html" class="vision-button vision-button-outline">
+                        Explore Our Mission
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFICIAL VISION STATEMENT -->
+        <section class="vision-statement-section" id="vision-statement">
+            <div class="container">
+                <div class="vision-statement-card reveal">
+
+                    <div class="vision-mark">
+                        <svg viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="1.7"
+                             stroke-linecap="round" stroke-linejoin="round"
+                             aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+                    </div>
+
+                    <p class="section-label">The Future We Believe In</p>
+                    <h2>Our Vision Statement</h2>
+
+                    <blockquote>
+                        To raise a generation of young believers who find
+                        <strong>purpose, identity and fulfillment in Christ</strong>
+                        through the transforming power of music and worship.
+                    </blockquote>
+
+                    <p class="statement-reference">
+                        Rafiki Zespół — Where Music Meets Purpose
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VISION PILLARS -->
+        <section class="vision-pillars-section">
+            <div class="container">
+
+                <div class="vision-section-heading">
+                    <span class="section-label">What We Stand For</span>
+                    <h2>A vision that goes beyond the music.</h2>
+                    <p>
+                        Our vision is about more than songs and performances.
+                        It is about lives transformed, faith strengthened,
+                        and young people discovering their God-given purpose.
+                    </p>
+                </div>
+
+                <div class="vision-pillars">
+
+                    <article class="vision-pillar reveal">
+                        <span class="vision-pillar-number">01</span>
+                        <h3>Purpose</h3>
+                        <p>
+                            Encouraging young believers to discover their
+                            God-given calling and live intentionally for Christ.
+                        </p>
+                    </article>
+
+                    <article class="vision-pillar reveal">
+                        <span class="vision-pillar-number">02</span>
+                        <h3>Identity in Christ</h3>
+                        <p>
+                            Inspiring a generation to build its identity,
+                            confidence, and hope on the foundation of Christ.
+                        </p>
+                    </article>
+
+                    <article class="vision-pillar reveal">
+                        <span class="vision-pillar-number">03</span>
+                        <h3>Transformation Through Worship</h3>
+                        <p>
+                            Creating meaningful worship encounters where
+                            music becomes a channel for faith, renewal,
+                            and spiritual growth.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SCRIPTURE -->
+        <section class="vision-scripture">
+            <div class="container">
+                <blockquote>
+                    “For when David had served God's purpose in his own
+                    generation, he fell asleep.”
+                    <cite>Acts 13:36</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- CLOSING CTA -->
+        <section class="vision-cta">
+            <div class="container">
+                <h2>Be Part of the Vision.</h2>
+                <p>
+                    We believe every generation has a purpose to fulfil.
+                    Join Rafiki Zespół as we use music and worship to inspire
+                    young believers to live for Christ.
+                </p>
+
+                <div class="vision-cta-actions">
+                    <a href="volunteer.html"
+                       class="vision-button vision-button-primary">
+                        Serve With Us
+                    </a>
+
+                    <a href="contact.html"
+                       class="vision-button vision-button-outline">
+                        Connect With Rafiki
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SHARED FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a class="brand" href="../index.html">
+                        <img class="brand-logo"
+                             src="../assets/images/logos/rafiki-logo.jpeg"
+                             alt="Rafiki Zespół logo">
+                        <span class="brand-name"><strong>Rafiki</strong> Zespół</span>
+                    </a>
+                    <p>
+                        Where Music Meets Purpose. Serving God's purpose
+                        in our generation through music and worship.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Discover</h4>
+                    <a href="about.html">About Rafiki</a>
+                    <a href="vision.html">Our Vision</a>
+                    <a href="mission.html">Our Mission</a>
+                    <a href="journey.html">Our Journey</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Ministry</h4>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="music.html">Sound &amp; Media</a>
+                    <a href="events.html">Events</a>
+                    <a href="community.html">Community</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <a href="invite.html">Invite Rafiki</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="partner.html">Partner With Us</a>
+                    <a href="support.html">Support the Vision</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-inner">
+                    <p>© <span data-current-year></span> Rafiki Zespół. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
